@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/timeline.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">   
+     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- Local styling sheet -->
+    <link rel="stylesheet" href="css/mycss.css">
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- FONT AWESOME ICONS -->
+    <script src="https://use.fontawesome.com/011e08f9c3.js"></script>
+    <!-- 3D DEMO -->
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="css/screencss.css">
+    <script src="https://use.fontawesome.com/bc788740d7.js"></script>
+    <style>
+        a {
+            color: #337ab7!important;
+            text-decoration: none;
+        }
+        .home-button{
+            color:white!important;
+        }
+        .intro-display{
+            padding-top:40px!important;
+            color:#07253e!important       
+        }
+        .h2-name{
+            color:#b79a0d;
+            font-size:25px
+        }
+        .fa-2x{
+            font-size: large!important;
+        }
+        .lead{
+            font-family: serif!important;
+        }
+        .display-4{
+            font-size: 5.5rem!important;
+        }
+    </style>
+</head>
+<body>
+    <header class="">
+        <nav class="mainnav">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#"><img class="port_logo" src="images/portlogo_transparent.png" height="40px"
+                  width="90p" alt=""></a>
+            </div>
+            <ul class="nav navbar-nav">
+              <li class="active"><a class="home-button" href="/">Home</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    <div class="container py-5">
+        <!-- For demo purpose -->
+        <div class="row text-center text-white mb-5">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="intro-display display-4">Github Repositories <i class="fab fa-github-square"></i></h1>
+                <p class="lead mb-0">Check out all my projects that I've worked on </p>
+                </div>
+            </div><!-- End -->
+            <div class="row">
+                <div class="col-lg-7 mx-auto">
+                    <!-- Timeline -->
+                    <ul class="timeline">
+                        <% for(var i = 0;i<repos.length;i++){%>
+                            <li class="timeline-item bg-white rounded ml-3 p-4 shadow">
+                                <div class="timeline-arrow"></div>
+                                <h2 class="h2-name"><%=repos[i]['fullname']%> <a target="_blank" href="<%=repos[i]['url']%>">Go to repo <i class="fas fa-link fa-2x"></i></a></h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i><b>Last updated: </b><%=repos[i]['update']%></span>
+                                <p class="text-small mt-2 font-weight-light"><%=repos[i]['des']%></p>
+                            </li>
+                        <%}%>
+                    </ul><!-- End -->
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
+
+
