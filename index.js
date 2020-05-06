@@ -42,8 +42,7 @@ app.use(express.static('public'))
 // Listen to the port 
 app.listen(PORT, ()=>{
     console.log("Connection to PORT "+PORT);
-})
-
+});
 
 //This function will get all of the repos information from the github API
 function getListOfRepos(data){
