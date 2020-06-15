@@ -4,36 +4,30 @@
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+    padding-top: 40px;
     position: relative;
-    top: 200px;
+    top:80px;
 }
-/* buttons */
-.sub-buttons{
-    margin-top: 20px;
-    width: 480px;
-    height: 200px;
-}
+
 .btn-source{
     position: absolute;
-    bottom: 0;
     left: 35%;
     padding-top:40px;
     margin-left: 1em;
     margin-right: 1em;
-    
+
   }
 .btn-website {
     position: absolute;
-    bottom: 0;
     right: 62%;
     margin-left: 1em;
     margin-right: 1em;
-    
+
 }
 
 /*div content for img and source/website buttons */
 .col-md-8 {
-    width: 55%;
+    width: 100%;
     height: 340px;
 }
 
@@ -55,4 +49,22 @@
 /* title description */
 .project-des{
     color: #c7c7c7;
+}
+
+.flow_content {
+    padding-bottom: 100px;
+}
+
+
+@media screen and (max-width:768px){
+    .flow_content img{
+        width:100%;
+    }
+    .flow_content{
+        top:40px;
+    }
+    .web-code-btn{
+        text-align: center;
+        padding-top:20px;
+    }
 }
