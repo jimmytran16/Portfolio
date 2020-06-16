@@ -51,7 +51,7 @@ li.timeline-item::before {
 body {
     background: #E8CBC0;
     background: -webkit-linear-gradient(to right, #E8CBC0, #636FA4);
-    background: linear-gradient(to right, #E8CBC0, #636FA4);
+    background: linear-gradient(to right, #1b223e, #636FA4);
     min-height: 100vh;
 }
 

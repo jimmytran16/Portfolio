@@ -5,7 +5,7 @@ const router = express.Router()
 
 
 router.get('/',(request,res)=>{ /* Go to the repos HTML page*/
-    const url = process.env.ENDPOINT_URL; //get the url endpoint from the enviroment 
+    const url = process.env.ENDPOINT_URL //get the url endpoint from the enviroment 
     axios.get(url)
         .then(response => {
             console.log(typeof(response.data));

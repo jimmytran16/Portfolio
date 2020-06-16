@@ -85,10 +85,6 @@
   }
 }
 
-.its-a-wrap {
-  overflow-x: hidden;
-}
-
 .col-md-3 {
   text-align: center;
 }
@@ -110,6 +106,11 @@ form a i {
   form a i {
     padding: 10px;
   }
+}
+
+.its-a-wrap {
+  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .navbar-expand-lg {
