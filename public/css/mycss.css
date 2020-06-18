@@ -60,7 +60,9 @@
     position: relative!important;
     bottom: 100px!important;
   }
-
+  /* .dg-wrapper{
+    width: 100%!important;
+  } */
   .dg-wrapper a {
     width: 340px!important;
     height: 225px!important;
