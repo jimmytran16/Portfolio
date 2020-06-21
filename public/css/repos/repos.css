@@ -27,6 +27,12 @@
     margin-top: 40px;
 }
 
+@media screen and (max-width: 768px){
+    .display-4 {
+        font-size: 3.5rem!important;
+    }
+}
+
 .col-lg-7 {
     width: 90% !important;
 }

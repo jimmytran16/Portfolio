@@ -18,6 +18,19 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <!-- <link rel="stylesheet" href="css/screencss.css"> -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+<style>
+  .aboutme-row{
+    margin-bottom: 40px;  
+  }
+  .fa-github:hover{color:#f34f29;}
+  .fa-linkedin-square:hover{color:#0e76a8;}
+  .fa-envelope-o:hover{color:#D44638;}
+  @media screen and (max-width: 768px){
+    h1{
+      font-size: 4.5rem;
+    }
+  }
+</style>
 </head>
 <body>
   <header class="mainheader">
@@ -73,11 +86,13 @@
       <h1 class="header_title_section"><i class="fa fa-user-circle-o" aria-hidden="true"></i><b> About Me </b></h1>
     </div>
     <div class="container">
-      <div class="row">
+      <div class="row aboutme-row">
         <div class="col-md-3"><img src="images/profilepic.jpg" alt="Avatar" height="220px" width="220px">
-          <div class="links"><a href="https://github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+          <div class="links">
+            <a href="https://github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
             <a href="https://www.linkedin.com/in/jimmyvt" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-          </div>
+            <a href="mailto:jimmy.tran005@umb.edu" target="_blank"><i class="fa fa-envelope-o fa-3x" aria-hidden="true"></i></a>
+          </div>  
         </div>
         <div class="col-md-9">
           <p class="aboutme-paragraph">My name is Jimmy Tran. I am an aspiring software engineer with a love for problem-solving, and a strong

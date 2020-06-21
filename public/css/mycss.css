@@ -60,11 +60,11 @@
     position: relative!important;
     bottom: 100px!important;
   }
-  /* .dg-wrapper{
+  .dg-wrapper{
     width: 100%!important;
-  } */
+  }
   .dg-wrapper a {
-    width: 340px!important;
+    width: 100%!important;
     height: 225px!important;
   }
   .dg-wrapper a img {
@@ -98,6 +98,10 @@ form a i {
   padding: 20px;
   font-size: 16px;
   text-transform: uppercase;
+}
+
+.collapse .navbar-nav li:hover{
+  background-color:#80808091;
 }
 
 @media screen and (max-width:768px) {
@@ -233,5 +237,5 @@ b, strong {
 
 .aboutme-paragraph{
   color: #bdbdbd;
-  font-size: 20px;
+  font-size: 16px;
 }

@@ -25,6 +25,12 @@
 
 }
 
+/* Website / Source code button container */
+.web-code-btn{
+    padding-top:20px;
+}
+
+
 /*div content for img and source/website buttons */
 .col-md-8 {
     width: 100%;
@@ -65,6 +71,5 @@
     }
     .web-code-btn{
         text-align: center;
-        padding-top:20px;
     }
 }
