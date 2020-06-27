@@ -21,6 +21,17 @@
 <style>
   .aboutme-row{
     margin-bottom: 40px;  
+    border:solid 1px grey;
+  }
+  .profile-img{
+    padding:10px;
+  }
+  .col-md-9{
+    margin:auto;
+  }
+  .proj_img{
+    width:inherit;
+    height:inherit;
   }
   .fa-github:hover{color:#f34f29;}
   .fa-linkedin-square:hover{color:#0e76a8;}
@@ -28,6 +39,10 @@
   @media screen and (max-width: 768px){
     h1{
       font-size: 4.5rem;
+    }
+    .profile-img{
+      width:90%!important;
+      height:auto!important;
     }
   }
 </style>
@@ -62,11 +77,14 @@
     </div>
     <section id="dg-container" class="dg-container">
       <div id="projects" class="dg-wrapper textWithBlurredBg">
-        <a href="bookproject.html" class="more">
-          <img class="proj_img" src="images/proj1.JPG" alt="image01"><i class="fa fa-sign-in" aria-hidden="true"></i>
+          <a href="greenvoter.html" class="more">
+          <img class="proj_img" src="images/gvg.png" alt="image05"><i class="fa fa-sign-in" aria-hidden="true"></i>
         </a>
         <a href="dnsproject.html" class="more">
           <img class="proj_img" src="images/proj2.png" alt="image02"><i class="fa fa-sign-in" aria-hidden="true"></i>
+        </a>
+        <a href="bookproject.html" class="more">
+          <img class="proj_img" src="images/proj1.JPG" alt="image01"><i class="fa fa-sign-in" aria-hidden="true"></i>
         </a>
         <a href="shoprproject.html" class="more">
           <img class="proj_img" src="images/background_main.png" alt="image03"><i class="fa fa-sign-in" aria-hidden="true"></i>
@@ -87,7 +105,7 @@
     </div>
     <div class="container">
       <div class="row aboutme-row">
-        <div class="col-md-3"><img src="images/profilepic.jpg" alt="Avatar" height="220px" width="220px">
+        <div class="col-md-3"><img class="profile-img" src="images/propic.jpg" alt="Avatar" height="220px" width="220px">
           <div class="links">
             <a href="https://github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
             <a href="https://www.linkedin.com/in/jimmyvt" target="_blank"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
