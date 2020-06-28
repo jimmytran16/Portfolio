@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Shopr</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- Local styling sheet -->
-    <link rel="stylesheet" href="css/mycss.css">
-    <link rel="stylesheet" href="css/subpage.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <title>Shopr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Local styling sheet -->
+  <link rel="stylesheet" href="css/mycss.css">
+  <link rel="stylesheet" href="css/subpage.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="/"><img class="port_logo" src="images/portlogo_transparent.png" height="40px" width="90p" alt=""></a></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="active"><a href="/">Home</a></li>
-              <li><a href="index.html#projects">Projects</a></li>
-              <li><a href="index.html#aboutme">About Me</a></li>
-              <li><a href="/repos">Repos</a></li>
-              <li><a href="resume/JimmyTranResume.pdf" download>
-                  Resume <span><i class="fa fa-cloud-download" aria-hidden="true"></i></span>
-                </a></li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <a href="https://www.github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
-              <a href="https://www.linkedin.com/in/jimmyvt" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
-            </form>
-          </div>
-        </nav>
-      </header>
 
-    <div class="container its-a-wrap">
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/"><img class="port_logo" src="images/portlogo_transparent.png" height="40px"
+          width="90p" alt=""></a></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#aboutme">About Me</a></li>
+          <li><a href="/repos">Repos</a></li>
+          <li><a href="resume/JimmyTranResume.pdf" download>
+              Resume <span><i class="fa fa-cloud-download" aria-hidden="true"></i></span>
+            </a></li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a href="https://www.github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-lg"
+              aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/jimmyvt" target="_blank"><i class="fa fa-linkedin-square fa-lg"
+              aria-hidden="true"></i></a>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container its-a-wrap">
+
+    <div class="row">
+      <div class="col-md-8">
         <h1 class="my-project-title">Shopr
         </h1>
-        <div class="row">
-
-            <div class="col-md-8">
-                <img class="img-fluid" src="images/proj3.png" />
-                <div class="web-code-btn">
-                    <a href="https://www.github.com/jimmytran16/shopr" target="_blank"><button
-                            class="btn btn-primary">Source code</button></a>
-                </div>
-            </div>
-            <div class="col-md-4 project-des">
-                <h3 class="my-3">Project Description</h3>
-                <p>This is a Android mobile marketplace application. This application allows to you buy and sell your items within the platform.
-                    Includes a main page for user to log in or register if they haven't already. Also has a google sign-in feature to log into the platform
-                    using your pre-existing google account. Integrated the Google Firebase API for server-side configurations, such as user authentication &
-                    uploads and fetching items from the real time database.
-                </p>
-                <h3 class="my-3">Project Stack</h3>
-                <ul>
-                    <li>Android Studios</li>
-                    <li>Java</li>
-                    <li>Google Firebase API</li>
-                </ul>
-            </div>
+        <img class="img-fluid" src="images/proj3.png" />
+        <div class="web-code-btn">
+          <a href="https://www.github.com/jimmytran16/shopr" target="_blank"><button class="btn btn-primary">Source
+              code</button></a>
         </div>
+      </div>
+      <div class="col-md-4 project-des">
+        <h3 class="my-3">Project Description</h3>
+        <p>This is a Android mobile marketplace application. This application allows to you buy and sell your items
+          within the platform.
+          Includes a main page for user to log in or register if they haven't already. Also has a google sign-in feature
+          to log into the platform
+          using your pre-existing google account. Integrated the Google Firebase API for server-side configurations,
+          such as user authentication &
+          uploads and fetching items from the real time database.
+        </p>
+        <h3 class="my-3">Project Stack</h3>
+        <ul>
+          <li>Android Studios</li>
+          <li>Java</li>
+          <li>Google Firebase API</li>
+        </ul>
+      </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </body>
+
 </html>
