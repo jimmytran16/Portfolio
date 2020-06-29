@@ -65,7 +65,7 @@
   }
   .dg-wrapper a {
     width: 100%!important;
-    height: 225px!important;
+    height: auto!important;
   }
   .dg-wrapper a img {
     width: 100%;
