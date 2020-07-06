@@ -3,11 +3,10 @@ const path = require('path');
 const repoUtils  = require('./util/repoUtils.js')
 const axios = require('axios');
 const router = express.Router()
-// const endpoint_url = require('./configs').endpoint_url; //Comment out for production
-// console.log(endpoint_url) //Comment out for production
+if(process.env.NODE_ENV !=='production'){require('dotenv').config();}
 
 router.get('/',(request,res)=>{ /* Go to the repos HTML page*/
-    const url = process.env.ENDPOINT_URL || endpoint_url //get the url endpoint from the enviroment
+    const url = process.env.ENDPOINT_URL//get the url endpoint from the enviroment
     axios.get(url)
         .then(response => {
             console.log(typeof(response.data));
