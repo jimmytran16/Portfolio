@@ -15,7 +15,8 @@
 
 .h2-name {
     color: #b79a0d;
-    font-size: 25px
+    font-size: 25px;
+    word-break: break-word;
 }
 
 .fa-2x {

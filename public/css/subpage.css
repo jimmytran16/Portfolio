@@ -62,7 +62,7 @@
     padding-top:20px;
 }
 
-
+/* Mobile styling  */
 @media screen and (max-width:768px){
     .flow_content img{
         width:100%;
@@ -72,5 +72,8 @@
     }
     .web-code-btn{
         text-align: center;
+    }
+    .project-des{
+        padding-top: 25px;
     }
 }

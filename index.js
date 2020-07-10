@@ -4,7 +4,7 @@ const reposRouter = require('./routes/repos')
 const path = require('path');
 const app = express();
 
-if(process.env.NODE_ENV !== 'production'){require('dotenv').config();}
+if(process.env.NODE_ENV !== 'production'){require('dotenv').config();} // If this is not a production server, then load the .env file
 const PORT = process.env.PORT || 3000;
 
 //Set Static files && Views && EJS template engine
