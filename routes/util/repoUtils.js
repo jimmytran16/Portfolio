@@ -14,7 +14,7 @@ function formatDate(date){ /* This function is to format the date into MM/DD/YYY
 }
 
 
-module.exports = {
+module.exports = { /* Export the functions */
   sortByDate : sortByDate,
   formatDate : formatDate
 }

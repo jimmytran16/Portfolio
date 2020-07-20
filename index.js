@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 3000;
 //Set Static files && Views && EJS template engine
 app.use(express.static('public', {
   maxAge: '43200' // cached on client side for 12 hours before re-requesting the server
-}))
+}));
+
 app.set('views',path.join(__dirname,"views"))
 app.set('view engine', 'ejs');
 
