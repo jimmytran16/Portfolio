@@ -4,8 +4,21 @@ const reposRouter = require('./routes/repos')
 const path = require('path');
 const app = express();
 
-if(process.env.NODE_ENV !== 'production'){require('dotenv').config();} // If this is not a production server, then load the .env file
-const PORT = process.env.PORT || 3000;
+// If this is not a production server
+if(process.env.NODE_ENV !== 'production'){
+	require('dotenv').config();
+}else{
+	 //Set the app to detect HTTP and redirect to HTTPS traffic
+	console.log("setting app to use SECURE CONNECTION");
+        app.use((req,res)=>{
+                if(req.secure){ //if the request is secure than dont do anything
+                        next();
+                }else{ //if the request is not secure, then redirect it to HTTPS
+                        res.redirect('https://'+req.headers.host + req.url);
+                }
+        });
+}
+const PORT = process.env.PORT || 3000; //Set PORT
 
 //Set Static files && Views && EJS template engine
 app.use(express.static('public', {
