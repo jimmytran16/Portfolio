@@ -10,7 +10,7 @@ if(process.env.NODE_ENV !== 'production'){
 }else{
 	 //Set the app to detect HTTP and redirect to HTTPS traffic
 	console.log("setting app to use SECURE CONNECTION");
-        app.use((req,res)=>{
+        app.use((req,res,next)=>{
                 if(req.secure){ //if the request is secure than dont do anything
                         next();
                 }else{ //if the request is not secure, then redirect it to HTTPS
