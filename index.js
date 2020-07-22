@@ -17,6 +17,7 @@ if(process.env.NODE_ENV !== 'production'){
                         res.redirect('https://'+req.headers.host + req.url);
                 }
         });
+	app.enable('trust proxy');
 }
 const PORT = process.env.PORT || 3000; //Set PORT
 
