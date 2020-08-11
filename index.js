@@ -4,7 +4,7 @@ const reposRouter = require('./routes/repos')
 const path = require('path');
 const app = express();
 
-// If this is not a production server
+// If this is not a production server, then look for the local .env file
 if(process.env.NODE_ENV !== 'production'){
 	require('dotenv').config();
 }else{

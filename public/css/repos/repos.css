@@ -1,16 +1,19 @@
+.timeline-section{
+  margin-top: 7rem;
+}
+
 .h2-name a {
     color: #337ab7 !important;
     text-decoration: none;
 }
 
-.home-button {
-    color: white !important;
+.caption-h1{
+  text-align: center;
+  color:#3a9aff;
 }
 
-.intro-display {
-    padding-top: 40px !important;
-    color: #3a9aff !important;
-    width: 100%;
+.home-button {
+    color: white !important;
 }
 
 .h2-name {
@@ -23,14 +26,9 @@
     font-size: large !important;
 }
 
-.display-4 {
-    font-size: 4.5rem !important;
-    margin-top: 40px;
-}
-
 @media screen and (max-width: 768px){
-    .display-4 {
-        font-size: 3.5rem!important;
+    .caption-h1 {
+        font-size: 2.5rem!important;
     }
 }
 

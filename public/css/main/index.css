@@ -1,0 +1,32 @@
+.aboutme-row{
+  margin-bottom: 40px;
+  border:solid 1px grey;
+}
+.about-me-icon{
+  margin:0 5px;
+}
+.profile-img{
+  padding:10px;
+}
+.col-md-8{
+  margin:auto;
+}
+.col-md-4{
+  text-align: center;
+}
+.proj_img{
+  width:inherit;
+  height:inherit;
+}
+.fa-github:hover{color:#f34f29;}
+.fa-linkedin-square:hover{color:#0e76a8;}
+.fa-envelope-o:hover{color:#D44638;}
+@media screen and (max-width: 768px){
+  h1{
+    font-size: 2.5rem;
+  }
+  .profile-img{
+    width:90%!important;
+    height:auto!important;
+  }
+}

@@ -55,6 +55,18 @@
   width: 2.5em;
   height: 2.5em;
 }
+
+.navbar-toggler {
+  font-size: 0.65rem;
+}
+
+.navbar-icon-container{
+  margin: 0 auto;
+}
+
+.navbar {
+  text-align: center;
+}
 @media screen and (max-width:515px){
   .left-right-btn{
     position: relative!important;
