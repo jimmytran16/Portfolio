@@ -19,6 +19,7 @@ if(process.env.NODE_ENV !== 'production'){
         });
 	app.enable('trust proxy');
 }
+
 const PORT = process.env.PORT || 3000; //Set PORT
 
 //Set Static files && Views && EJS template engine
