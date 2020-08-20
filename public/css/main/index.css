@@ -21,6 +21,7 @@
 .fa-github:hover{color:#f34f29;}
 .fa-linkedin-square:hover{color:#0e76a8;}
 .fa-envelope-o:hover{color:#D44638;}
+.fa-phone:hover{color:green;}
 @media screen and (max-width: 768px){
   h1{
     font-size: 2.5rem;
