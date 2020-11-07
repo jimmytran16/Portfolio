@@ -7,22 +7,11 @@ const mongoose = require('mongoose');
 const app = express();
 const Post = require('./model/posts');
 const PORT = process.env.PORT || 3000; //Set PORT
-
-// Middlewares
-
-//Set Static files && Views && EJS template engine
-app.use(express.static('public', {
-        maxAge: '43200' // cached on client side for 12 hours before re-requesting the server
-}));
-app.use(express.json());
-app.use(express.urlencoded());
-
-app.set('views', path.join(__dirname, "views"))
-app.set('view engine', 'ejs');
-
+var TIME_TO_CACHE = '0';
 // If this is not a production server, then look for the local .env file
 if (process.env.NODE_ENV !== 'production') {
         require('dotenv').config();
+        TIME_TO_CACHE = '43200';
 } else {
         //Set the app to detect HTTP and redirect to HTTPS traffic
         console.log("setting app to use SECURE CONNECTION");
@@ -35,6 +24,19 @@ if (process.env.NODE_ENV !== 'production') {
         });
         app.enable('trust proxy');
 }
+
+// Middlewares
+app.use(express.json());
+app.use(express.urlencoded());
+
+//Set Static files && Views && EJS template engine
+app.set('views', path.join(__dirname, "views"))
+app.set('view engine', 'ejs');
+
+// middle ware to cache the public contents on the user's browser
+app.use(express.static('public', {
+        maxAge: TIME_TO_CACHE // cached on client side for 12 hours before re-requesting the server
+}));
 
 // connect to mongoose
 mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true }, (err) => {

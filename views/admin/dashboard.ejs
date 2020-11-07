@@ -9,9 +9,28 @@
 </head>
 <body>
     <form action="submitpost" method="POST">
-        <input type="text" name="title" placeholder="title" />
+        <input type="text" id="title" name="title" placeholder="title" />
+        <span id="title-msg"></span>
         <textarea name="description" id="" cols="30" rows="10" placeholder="description" ></textarea>
         <button class="btn btn-success" type="submit">Submit</button>
     </form>
+    <script>
+        let title = document.getElementById('title');
+        let title_msg = document.getElementById('title-msg');
+        let button = document.getElementsByTagName('button')[0];
+
+        title.addEventListener('change', (e) => {
+            console.log(title.value.length)
+            if ( title.value.length  > 50 ) {
+                console.log('greater than 50!!!!');
+                title_msg.innerHTML = 'Please enter less than 40 characters!';
+                button.disabled = true;
+            }
+            else {  
+                title_msg.innerHTML = '';
+                button.disabled = false;
+            }
+        })
+    </script>
 </body>
 </html>
