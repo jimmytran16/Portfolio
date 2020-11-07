@@ -71,14 +71,14 @@
                                 <div class="col-12">
                                     <div class="card-body">
                                         <a href="blog/readmore/<%=posts[i]._id%>">
-                                            <h4 style="color:black;font-weight: bolder;font-size: 25px;" class="card-title"><%= posts[i].title %></h4>
+                                            <h4 class="card-title"><%= posts[i].title %></h4>
                                         </a>
                                         <p style="overflow:hidden;height:100px;" class="card-text"><%= posts[i].description.substring(0,180) %> ... </p>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="publisher-container">
-                                        <img class="blog-profile-pic" src="/images/propic.jpg" />
+                                        <a href="/#aboutme"><img class="blog-profile-pic" src="/images/propic.jpg" /></a>
                                         <p class="card-text"><small class="text-muted"><%= posts[i].date %></small></p>
                                     </div>
                                 </div>
@@ -90,6 +90,9 @@
             <% } %>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

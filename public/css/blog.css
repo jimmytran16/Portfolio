@@ -20,6 +20,20 @@
     height: 200px;
 }
 
+.card-body a .card-title {
+    color:black;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.card-body a .card-title:hover {
+    color:#656565;
+}
+
+.publisher-container a img:hover {
+    opacity:0.65
+}
+
 .publisher-container {
     padding-left:20px;
     padding-right: 20px;
@@ -38,6 +52,11 @@
 
 .card-body .row .col-md-6 button {
     float: right;
+}
+
+.publisher-container p small {
+    padding-left:2vh;
+    font-size: 12px;
 }
 
 @media screen and (max-width:768px) { 

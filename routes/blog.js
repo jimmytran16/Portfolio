@@ -1,8 +1,10 @@
+const e = require('express');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Post = require('../model/posts');
 
+// configurate the .env file when it is not in production
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
@@ -35,15 +37,24 @@ router.get('/dashboard', (req,res) => {
 // route to see and read the blogs in more detail
 router.get('/readmore/:id', (req,res) => {
     let blog_id = req.params.id;
+
+    // check if the string passed is a 12 byte string or 24 hex
+    if (blog_id.length !== 24) {  res.sendStatus(404); return;}
+
+    // look for the post in mongodb
     Post.findById({_id: new mongoose.Types.ObjectId(blog_id)}, (err , data) => {
         if ( err ) { 
-            res.statusCode(401); 
+            res.sendStatus(401);
             res.end();
         }
         else {
-            res.render('blog/readblog.ejs', {
-                posts:data
-            })
+            // if there is no posts returned, then return a 404
+            if (!data) { res.sendStatus(404); res.end(); return; }
+            else {
+                res.render('blog/readblog.ejs', {
+                    posts:data
+                })
+            }
         }
     })
 })

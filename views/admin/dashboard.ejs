@@ -6,24 +6,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>dashboard</title>
+    <style>
+        form {
+            text-align: center;
+        }
+        input,textarea,button {
+            display: block;
+            margin: 5px auto;
+
+        }
+        span {
+            color:red;
+        }
+    </style>
 </head>
 <body>
-    <form action="submitpost" method="POST">
-        <input type="text" id="title" name="title" placeholder="title" />
-        <span id="title-msg"></span>
-        <textarea name="description" id="" cols="30" rows="10" placeholder="description" ></textarea>
-        <button class="btn btn-success" type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <form action="submitpost" method="POST">
+            <input type="text" id="title" name="title" placeholder="title" />
+            <span id="title-msg"></span>
+            <textarea name="description" id="" cols="30" rows="10" placeholder="description" ></textarea>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+    </div>
     <script>
         let title = document.getElementById('title');
         let title_msg = document.getElementById('title-msg');
         let button = document.getElementsByTagName('button')[0];
 
+        // listen to the title's input field and validate if it is less than 50 characters
         title.addEventListener('change', (e) => {
             console.log(title.value.length)
             if ( title.value.length  > 50 ) {
                 console.log('greater than 50!!!!');
-                title_msg.innerHTML = 'Please enter less than 40 characters!';
+                title_msg.innerHTML = 'Please enter 50 characters or less!';
                 button.disabled = true;
             }
             else {  
