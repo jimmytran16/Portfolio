@@ -1,0 +1,30 @@
+.read-me-blog-container { 
+    padding-top: 20vh;
+}
+
+.profile-section{
+    display: flex;
+    padding: 10px 0px;
+}
+
+.profile-section h3 { 
+    margin: 0px 15px;
+}
+
+.blog-profile-pic {
+    width: 30px;
+    height: 30px!important;
+    border-radius: 50%;
+}
+
+.read-post-description { 
+    word-break: break-word;
+}
+
+.blog-img-container img  {
+    height: 450px;
+}
+
+.blog-img-container {
+    text-align: center;
+}

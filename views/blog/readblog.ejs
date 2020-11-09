@@ -17,12 +17,12 @@
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="/css/main/index.css">
-    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/readblog.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 
 </head>
 
-<body>
+<body style="background-color: floralwhite!important;" >
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
           <a class="navbar-brand" href="/"><img class="port_logo" src="/images/portlogo_transparent.png" height="40px"
@@ -50,9 +50,25 @@
           </div>
         </nav>
       </header>
-    <div class="container blog-container">
-       <%= posts %>
+    <div class="container read-me-blog-container">
+      <div class="profile-section">
+        <a href="/#aboutme"><img class="blog-profile-pic" src="/images/propic.jpg" /></a>
+        <h3>Jimmy Tran</h3>
+      </div>
+      <h1><%= posts.title %></h1>
+
+      <p><%= posts.date %></p>
+
+      <div class="blog-img-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSJ3Wghniw5fn-8ac5PvMWNXOaUB507S2YHDw&usqp=CAU" alt="blog-picture">
+      </div>
+
+      <p class="read-post-description"><%= posts.description %></p>
+
     </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

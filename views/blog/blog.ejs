@@ -73,13 +73,14 @@
                                         <a href="blog/readmore/<%=posts[i]._id%>">
                                             <h4 class="card-title"><%= posts[i].title %></h4>
                                         </a>
-                                        <p style="overflow:hidden;height:100px;" class="card-text"><%= posts[i].description.substring(0,180) %> ... </p>
+                                        <p style="overflow:hidden;height:100px;" class="card-text"><%= posts[i].description.substring(0,150) %> ... </p>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="publisher-container">
                                         <a href="/#aboutme"><img class="blog-profile-pic" src="/images/propic.jpg" /></a>
-                                        <p class="card-text"><small class="text-muted"><%= posts[i].date %></small></p>
+                                        <p class="card-text"><small class="text-muted"><%= posts[i].date.split(',')[0] %></small> &bull; <%=posts[i].minutes%> min read </p>
+                                        <a href="blog/readmore/<%=posts[i]._id%>"><i class="fas fa-external-link-alt"></i></a>
                                     </div>
                                 </div>
                             </div>

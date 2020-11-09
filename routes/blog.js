@@ -1,7 +1,7 @@
-const e = require('express');
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
+const BlogUtil = require('./util/blogUtils');
 const Post = require('../model/posts');
 
 // configurate the .env file when it is not in production
@@ -19,19 +19,10 @@ router.get('/', (req,res) => {
             res.send(err);
         }else{
             res.render('blog/blog.ejs', {
-                posts: posts
+                posts: posts.reverse(),
             })
         }
     })
-})
-
-// route for the user's log in
-router.get(`/${process.env.URL_LOGIN}`, (req,res) => {
-    res.render('admin/login.ejs');
-})
-
-router.get('/dashboard', (req,res) => {
-    res.render('admin/dashboard.ejs');
 })
 
 // route to see and read the blogs in more detail
@@ -39,7 +30,7 @@ router.get('/readmore/:id', (req,res) => {
     let blog_id = req.params.id;
 
     // check if the string passed is a 12 byte string or 24 hex
-    if (blog_id.length !== 24) {  res.sendStatus(404); return;}
+    if (blog_id.length !== 24) {  res.sendStatus(404); return; }
 
     // look for the post in mongodb
     Post.findById({_id: new mongoose.Types.ObjectId(blog_id)}, (err , data) => {
@@ -59,6 +50,19 @@ router.get('/readmore/:id', (req,res) => {
     })
 })
 
+/* ADMIN */
+
+// route for the user's log in
+router.get(`/${process.env.URL_LOGIN}`, (req,res) => {
+    res.render('admin/login.ejs');
+})
+
+// route to go to dashboard of admin
+router.get('/dashboard', (req,res) => {
+    res.render('admin/dashboard.ejs');
+})
+
+// route to submit the post
 router.post('/submitpost', (req,res) => {
     console.log(req.body);
     let title = req.body.title;
@@ -66,7 +70,8 @@ router.post('/submitpost', (req,res) => {
 
     let post = new Post({
         title:title,
-        description:description
+        description:description,
+        minutes: BlogUtil.calculateReadTimePerPost(description)
     })
 
     post.save((err,result) => {
@@ -80,5 +85,6 @@ router.post('/submitpost', (req,res) => {
         }
     })
 })
+
 
 module.exports = router;
