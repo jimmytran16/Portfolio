@@ -1,6 +1,6 @@
 const express = require('express')
 const indexRouter = require('./routes/home')
-const reposRouter = require('./routes/repos')
+const adminRouter = require('./routes/admin/admin')
 const blogRouter = require('./routes/blog');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -8,11 +8,12 @@ const app = express();
 const Post = require('./model/posts');
 const PORT = process.env.PORT || 3000; //Set PORT
 var TIME_TO_CACHE = '0';
+
 // If this is not a production server, then look for the local .env file
 if (process.env.NODE_ENV !== 'production') {
         require('dotenv').config();
-        TIME_TO_CACHE = '43200';
 } else {
+        TIME_TO_CACHE = '43200';
         //Set the app to detect HTTP and redirect to HTTPS traffic
         console.log("setting app to use SECURE CONNECTION");
         app.use((req, res, next) => {
@@ -45,7 +46,7 @@ mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true }, (err) => {
 
         app.use('/', indexRouter); /* Path to the repos URL handler's main page */
         app.use('/blog', blogRouter);
-        // app.use('/repos',reposRouter); /* Path to the repos URL handler's router */
+        app.use(`/${process.env.BASE_ROUTER_ADMIN}`,adminRouter);
 })
 
 // Listen to the port
