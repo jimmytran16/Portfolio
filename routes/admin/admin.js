@@ -14,8 +14,10 @@ const multer = require('multer');
 const multerS3 = require('multer-s3');
 
 // set s3 configs
-const DO_ENDPOINT = 'https://nyc3.digitaloceanspaces.com/';
+const DO_ENDPOINT = process.env.s3_ENDPOINT;
 const spacesEndpoint = new aws.Endpoint(DO_ENDPOINT);
+
+// instance of s3 used to access sdk API  
 const s3 = new aws.S3({
     endpoint: spacesEndpoint,
     apiVersion: '2006-03-01',
@@ -23,12 +25,11 @@ const s3 = new aws.S3({
     accessKeyId: process.env.aws_access_key_id
 });
 
-
-// Change bucket property to your Space name
+// upload function for uploading the images to the s3 bucket
 const upload = multer({
     storage: multerS3({
         s3: s3,
-        bucket: 'jvtportfolio/yktv',
+        bucket: process.env.BUCKET_NAME,
         acl: 'public-read',
         contentType: multerS3.AUTO_CONTENT_TYPE,
         key: function (request, file, cb) {
