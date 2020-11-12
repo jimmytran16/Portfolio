@@ -6,6 +6,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const app = express();
 const Post = require('./model/posts');
+const session = require('express-session');
 const PORT = process.env.PORT || 3000; //Set PORT
 var TIME_TO_CACHE = '0';
 
@@ -39,17 +40,23 @@ app.use(express.static('public', {
         maxAge: TIME_TO_CACHE // cached on client side for 12 hours before re-requesting the server
 }));
 
+app.use(session({
+        secret: process.env.SEC_KEY,
+        resave: true,
+        saveUninitialized: true
+}));
+
 // connect to mongoose
 mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true }, (err) => {
         if (err) { console.log(err); }
         else { console.log('successfully connected!'); }
 
-        app.use('/', indexRouter); /* Path to the repos URL handler's main page */
+                // routers
+        app.use('/', indexRouter); 
         app.use('/blog', blogRouter);
         app.use(`/${process.env.BASE_ROUTER_ADMIN}`,adminRouter);
 })
 
-// Listen to the port
-app.listen(PORT, () => {
-        console.log(`Listening to PORT ${PORT} -- http://localhost:${PORT}`);
-});
+
+// export the app
+module.exports = app;

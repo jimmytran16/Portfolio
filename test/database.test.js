@@ -1,0 +1,34 @@
+require('dotenv').config();
+const app = require('../index');
+const supertest = require('supertest');
+const request = supertest(app);
+const Post = require('../model/posts');
+const mongoose = require('mongoose');
+
+
+// execution before the test suites
+beforeAll(async () => {
+    const url = `${process.env.DB_URL}`;
+    await mongoose.connect(url, { useNewUrlParser: true });
+});
+
+// execution after the test suites
+afterAll(async () => {
+    mongoose.disconnect();
+})
+
+// suite to test the database queries
+describe("Testing database queries", () => {
+    it("Should have 5 blogs in total right now", async done => {
+        // query all of the posts from mongoose
+        Post.find({}, function (err, data) {
+            if (err) { console.log(err) }
+            else {
+                let size_of_data = Object.keys(data).length;
+                expect(size_of_data).toBe(8);
+                done();
+            }
+        })
+    })
+
+})

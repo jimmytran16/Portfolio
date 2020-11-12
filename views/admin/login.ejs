@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/admin/login.css">
+    <title>Admin Login</title>
 </head>
 <body>
-    <h3> Login in page </h3>
+    <div class="container">
+        <section class="admin-login-section">
+            <h2>Admin Log in</h2>
+            <form action="login" method="POST">
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="password">
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <% if (error) { %>
+                    <span style="color:red;"><%=error%></span>
+                <% } %>
+            </form>
+        </section>
+    </div>
 </body>
 </html>

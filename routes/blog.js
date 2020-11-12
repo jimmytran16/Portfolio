@@ -1,43 +1,12 @@
 // configurate the .env file when it is not in production
-// if (process.env.NODE_ENV !== 'production') {
-//     require('dotenv').config();
-// }
-require('dotenv').config();
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const Post = require('../model/posts');
-
-
-// TESTING
-// render the file upload webpage
-// router.get('/test', (req, res) => {
-//     s3.getObject((err,data) => {
-//         if(!err) {
-//             console.log(data);
-//         }
-//     })
-//     res.render('test.ejs');
-// })
-
-// endpoint to upload the image from the webpage
-// router.post('/upload', upload.single('upload'), (req, res) => {
-//     // upload(req, res, (err) => {
-//     //     if (err) {
-//     //         console.log(err);
-//     //         return res.send(err);
-//     //     }
-//     //     console.log('File uploaded successfully.');
-//     //     res.send('succesfully uploaded!');
-//     //     res.end();
-//     // });
-//     res.send('uploadded!');
-// })
-
-// END TESTING
-
-
 
 // route of the blog
 router.get('/', (req, res) => {
