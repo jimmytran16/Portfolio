@@ -1,0 +1,16 @@
+form {
+    text-align: center;
+}
+input,textarea,button {
+    display: block;
+    margin: 5px auto;
+
+}
+span {
+    color:red;
+}
+@media screen and (max-width:768px) {
+    textarea {
+        width: 100%;
+    }
+}

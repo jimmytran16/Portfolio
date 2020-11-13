@@ -15,11 +15,12 @@ beforeAll(async () => {
 // execution after the test suites
 afterAll(async () => {
     mongoose.disconnect();
-})
+});
 
 // test cases for app's endpoints
 // checking to ensure all endpoints are returning a 200 response status
 describe("testing the endpoints of the blog feature" , () => {
+
     it("Should get a 200 response for /" , async done => {
         const response = await request.get("/");
         expect(response.statusCode).toBe(200);
@@ -28,6 +29,18 @@ describe("testing the endpoints of the blog feature" , () => {
 
     it("testing .. /blog" , async done => {
         const response = await request.get('/blog');
+        expect(response.statusCode).toBe(200);
+        done();
+    })
+
+    it("testing .. /index.html#aboutme" , async done => {
+        const response = await request.get('/index.html#aboutme');
+        expect(response.statusCode).toBe(200);
+        done();
+    })
+
+    it("testing .. /index.html#projects" , async done => {
+        const response = await request.get('/index.html#projects');
         expect(response.statusCode).toBe(200);
         done();
     })

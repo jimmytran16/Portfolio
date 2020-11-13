@@ -86,3 +86,10 @@
     }
 
 }
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+    .publisher-container p small {
+        padding-right: 1vh;
+        padding-left: 1vh;
+    }
+}

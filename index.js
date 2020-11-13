@@ -50,8 +50,8 @@ app.use(session({
 mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true }, (err) => {
         if (err) { console.log(err); }
         else { console.log('successfully connected!'); }
-
-                // routers
+        
+        // routers
         app.use('/', indexRouter); 
         app.use('/blog', blogRouter);
         app.use(`/${process.env.BASE_ROUTER_ADMIN}`,adminRouter);

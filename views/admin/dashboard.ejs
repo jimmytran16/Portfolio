@@ -5,20 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>dashboard</title>
-    <style>
-        form {
-            text-align: center;
-        }
-        input,textarea,button {
-            display: block;
-            margin: 5px auto;
-
-        }
-        span {
-            color:red;
-        }
-    </style>
+    <link rel="stylesheet" href="/css/admin/dashboard.css">
+    <title>Admin Dashboard</title>
+  
 </head>
 <body>
     <div class="container">
@@ -28,11 +17,19 @@
         <form action="/admin/user/submitpost" enctype="multipart/form-data" method="POST">
             <input type="text" id="title" name="title" placeholder="title" />
             <span id="title-msg"></span>
-            <textarea name="description" id="" cols="30" rows="10" placeholder="description" ></textarea>
+            <textarea name="description" id="" cols="80" rows="10" placeholder="description" ></textarea>
             <label for="upload">Upload a file</label>
-            <input id="upload" type="file" name="upload">
+            <input id="upload" type="file" name="upload" required>
             <button class="btn btn-success" type="submit">Submit</button>
         </form>
+        <div style="text-align: center;margin: 20px 20px;">
+            <div style="background-color:bisque;display:inline-block;" class="code-sample-container">
+                <h4 style="text-align: center;">Template code display</h4>
+                <div style="margin:0px 12px;">
+                    <pre><%=code%></pre>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         let title = document.getElementById('title');

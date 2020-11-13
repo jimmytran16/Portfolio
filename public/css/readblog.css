@@ -1,5 +1,6 @@
 .read-me-blog-container { 
-    padding-top: 20vh;
+    padding-top: 15vh;
+    max-width: 600px;
 }
 
 .profile-section{
@@ -7,8 +8,9 @@
     padding: 10px 0px;
 }
 
-.profile-section h3 { 
-    margin: 0px 15px;
+.profile-section p { 
+    margin: auto 15px;
+    font-size: 16px;
 }
 
 .blog-profile-pic {
@@ -19,12 +21,19 @@
 
 .read-post-description { 
     word-break: break-word;
+    padding:10px 5px;
 }
 
 .blog-img-container img  {
-    height: 450px;
+    width: 100%;
 }
 
 .blog-img-container {
     text-align: center;
 }
+
+@media screen and (max-width:768px) {
+    .read-me-blog-container { 
+        padding-top: 12vh;
+    }
+} 
