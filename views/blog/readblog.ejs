@@ -19,21 +19,10 @@
   <link rel="stylesheet" href="/css/main/index.css">
   <link rel="stylesheet" href="/css/readblog.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-  <style>
-    .code-class {
-      background: hsl(30, 80%, 90%);
-      color: black;
-      font-weight: bolder;
-    }
 
-    pre {
-      white-space: pre-wrap;
-      padding: 10px;
-    }
-  </style>
 </head>
 
-<body style="background-color: floralwhite!important;">
+<body style="background-color: #fbfbfb;">
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="/"><img class="port_logo" src="/images/portlogo_transparent.png" height="40px"
@@ -69,7 +58,12 @@
       <p>Jimmy Tran</p>
     </div>
     <h1><%= posts.title %></h1>
-    <p><%= posts.date %></p>
+    <div class="date-tag-container">
+      <p><%= posts.date %></p>
+      <% for (var x = 0; x < posts.tags.length; x++) { %>
+      <span class="badge badge-pill <%=posts.tags[x][1]%>"> <%= posts.tags[x][0] %> </span>
+      <% } %>
+    </div>
     <div class="blog-img-container">
       <img src="<%=posts.img_path%>" alt="blog-picture">
     </div>

@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #fbfbfb;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="/"><img class="port_logo" src="/images/portlogo_transparent.png" height="40px"
@@ -54,7 +54,7 @@
     </header>
     <div class="container blog-container">
         <div class="blog-caption">
-            <h2>Welcome to my blog</h2>
+            <h2>My Latest Posts</h2>
         </div>
         <div class="row">
             <% for(var i = 0; i < posts.length; i++ ) { %>
@@ -73,7 +73,14 @@
                                         <a href="blog/readmore/<%=posts[i]._id%>">
                                             <h4 class="card-title"><%= posts[i].title %></h4>
                                         </a>
-                                        <p style="overflow:hidden;height:100px;" class="card-text"><%= posts[i].description.substring(0,150) %> ... </p>
+                                        <p style="overflow:hidden;height:100px;" class="card-text"><%= posts[i].description.substring(0,115) %> ...</p>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="badge-container">
+                                        <% for (var x = 0; x < posts[i].tags.length; x++) { %>
+                                            <span class="badge badge-pill <%=posts[i].tags[x][1]%>"> <%= posts[i].tags[x][0] %> </span>
+                                        <% } %>
                                     </div>
                                 </div>
                                 <div class="col-12">

@@ -116,10 +116,12 @@ router.post(`/${configs.LOGOUT_URL}`, (req, res) => {
 // route to submit the post
 // pass in the upload middleware to upload the file that is being passed in
 router.post(`/${configs.SUBMIT_URL}`, upload.single('upload'), (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     let title = req.body.title;
     let description = req.body.description;
-
+    let tags = req.body.tags;
+    console.log(tags);
+    
     // validate to see if the file was uploaded
     if (!req.file.location) { res.send('error uploading file, no file was selected!'); res.end() }
 
@@ -128,7 +130,8 @@ router.post(`/${configs.SUBMIT_URL}`, upload.single('upload'), (req, res) => {
         title: title,
         description: description,
         minutes: BlogUtil.calculateReadTimePerPost(description),
-        img_path: req.file.location
+        img_path: req.file.location,
+        tags: BlogUtil.proccessTags(tags)
     })
 
     // save the post to the database

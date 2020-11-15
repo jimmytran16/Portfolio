@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/admin/dashboard.css">
     <title>Admin Dashboard</title>
-  
+
 </head>
+
 <body>
     <div class="container">
         <form action="logout" method="POST">
@@ -17,9 +19,16 @@
         <form action="/admin/user/submitpost" enctype="multipart/form-data" method="POST">
             <input type="text" id="title" name="title" placeholder="title" />
             <span id="title-msg"></span>
-            <textarea name="description" id="" cols="80" rows="10" placeholder="description" ></textarea>
+            <textarea name="description" id="" cols="80" rows="10" placeholder="description"></textarea>
             <label for="upload">Upload a file</label>
             <input id="upload" type="file" name="upload" required>
+            <label for="tags">Select tags:</label>
+            <select name="tags" id="tags" multiple>
+                <option value="Java">Java</option>
+                <option value="Javascript">Javascript</option>
+                <option value="Web Development">Web development</option>
+                <option value="Python">Python</option>
+            </select>
             <button class="btn btn-success" type="submit">Submit</button>
         </form>
         <div style="text-align: center;margin: 20px 20px;">
@@ -39,16 +48,17 @@
         // listen to the title's input field and validate if it is less than 50 characters
         title.addEventListener('change', (e) => {
             console.log(title.value.length)
-            if ( title.value.length  > 50 ) {
+            if (title.value.length > 50) {
                 console.log('greater than 50!!!!');
                 title_msg.innerHTML = 'Please enter 50 characters or less!';
                 button.disabled = true;
             }
-            else {  
+            else {
                 title_msg.innerHTML = '';
                 button.disabled = false;
             }
         })
     </script>
 </body>
+
 </html>

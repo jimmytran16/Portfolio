@@ -8,7 +8,8 @@ var postSchema = mongoose.Schema({
     description: { type: String, required: true },
     minutes : { type: Number, required: true },
     date: { type: String, default: () => { return new Date().toLocaleString() } },
-    img_path: { type: String, required: false } 
+    img_path: { type: String, required: false },
+    tags : { type: Array, required: false } 
 })
 
 // get the Post object from the model and export it

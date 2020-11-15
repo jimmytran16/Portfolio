@@ -1,3 +1,28 @@
+.code-class {
+    background:#e8e4e4;
+    color: black;
+    font-weight: bolder;
+}
+
+pre {
+    white-space: pre-wrap;
+    padding: 10px;
+    box-shadow: 3px 3px darkgrey;
+}
+
+.date-tag-container {
+    margin-bottom: 5px;
+}
+
+.date-tag-container p , .date-tag-container span {
+    display: inline-block;
+}
+
+.date-tag-container p{
+    margin-right: 10px;
+    margin-bottom: unset;
+}
+
 .read-me-blog-container { 
     padding-top: 15vh;
     max-width: 600px;

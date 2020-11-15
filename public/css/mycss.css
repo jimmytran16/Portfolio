@@ -163,7 +163,7 @@ body {
     font-size: 14px!important;
     line-height: 1.42857143!important;
     color: #333!important;
-    background-color: black!important;
+    background-color: black;
     /* background-color:; */
 
 }

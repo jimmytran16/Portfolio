@@ -1,9 +1,17 @@
+.blog-container .blog-caption h2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    color:#395fa5;
+    padding:15px 10px;
+    font-size: 48px;
+}
 .row .col-md-6 .card .card-img-top {
     height: 250px;
 }
 
 .blog-container .row div .card {
     border-radius: unset;
+    box-shadow: 3px 3px #cccccc;
 }
 
 .blog-container { 
@@ -17,7 +25,7 @@
 }
 
 .card-body {
-    height: 200px;
+    height: 180px;
 }
 
 .card-body a .card-title {
@@ -72,6 +80,14 @@
     font-size: 12px;
 }
 
+p {
+    margin-bottom:unset;
+}
+
+.badge-container {
+    margin: 0px 20px;
+}
+
 /* mobile */
 @media screen and (max-width:768px) { 
     .card-body {
@@ -83,6 +99,9 @@
     .blog-profile-pic {
         width: 50px;
         height: 50px!important;
+    }
+    .badge {
+        font-size: 100%;
     }
 
 }
