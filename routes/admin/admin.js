@@ -94,14 +94,7 @@ router.post(`/${configs.LOGIN_URL}`, (req, res) => {
 
 // route to go to dashboard of admin
 router.get(`/${configs.DASHBOARD_URL}`, authenticateLoggedinUser, (req, res) => {
-    let code_sample = 
-    `
-    <section class="code-class"> 
-            <pre>
-            
-            </pre>
-    </section>
-    `;
+    let code_sample = configs.CODE_SAMPLE;
     // set dashboard to have no cache, so user can't use back button to go back to content after they log out
     res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
     res.render('admin/dashboard.ejs', {code:code_sample});
@@ -120,8 +113,10 @@ router.post(`/${configs.SUBMIT_URL}`, upload.single('upload'), (req, res) => {
     let title = req.body.title;
     let description = req.body.description;
     let tags = req.body.tags;
-    console.log(tags);
+    let custom_tags = req.body.custom_tags
+    console.log(req.body);
     
+
     // validate to see if the file was uploaded
     if (!req.file.location) { res.send('error uploading file, no file was selected!'); res.end() }
 
@@ -131,7 +126,7 @@ router.post(`/${configs.SUBMIT_URL}`, upload.single('upload'), (req, res) => {
         description: description,
         minutes: BlogUtil.calculateReadTimePerPost(description),
         img_path: req.file.location,
-        tags: BlogUtil.proccessTags(tags)
+        tags: BlogUtil.proccessTags(( Array.isArray(tags) ? tags : Array(tags) ), ( custom_tags === '' ? null : custom_tags.split(',') ) ) 
     })
 
     // save the post to the database

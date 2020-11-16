@@ -53,8 +53,9 @@
     display: inline;
 }
 
-.publisher-container .card-text{ 
-    padding: 0px 5px;
+.card-body .card-text{ 
+    overflow:hidden;
+    height:100px;
 }
 
 .publisher-container i {
@@ -111,4 +112,9 @@ p {
         padding-right: 1vh;
         padding-left: 1vh;
     }
+
+    .card-body .card-text{ 
+        height:60px;
+    }
+    
 }
