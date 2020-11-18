@@ -116,6 +116,10 @@ router.post(`/${configs.SUBMIT_URL}`, upload.single('upload'), (req, res) => {
     let custom_tags = req.body.custom_tags
     console.log(req.body);
     
+    // validate if the tag is passed in
+    if (!tags) {
+        tags = [];
+    }
 
     // validate to see if the file was uploaded
     if (!req.file.location) { res.send('error uploading file, no file was selected!'); res.end() }

@@ -9,14 +9,20 @@ const calculateReadTimePerPost = (text)  => {
 
 // function to proccess the tags and store it into array with corresponding badge classes ex.. [[tagName,className],[tagName2,className]...etc]
 const proccessTags = (tags,customs) => {
+    console.log(tags,customs);
     // if there are no tags or customs return
     if(!tags && !customs) { return; }
     
     // if there are customs, merge them with the tags array
     if( customs ) {
-        tags = [...tags,...customs];
+        if (!tags) {
+            console.log(tags)
+            console.log("first if");
+            tags = [...customs];
+        }else {
+            tags = [...tags,...customs];
+        }
     }
-
     // loop through the tags array and create new arrays [name,badgeClass] and push to the proccessed_tags
     let proccessed_tags = []
     for( var i = 0; i < tags.length; i++ ) {

@@ -47,6 +47,7 @@ pre {
 .read-post-description { 
     word-break: break-word;
     padding:10px 5px;
+    /* font-size: 16px; */
 }
 
 .blog-img-container img  {
@@ -60,5 +61,8 @@ pre {
 @media screen and (max-width:768px) {
     .read-me-blog-container { 
         padding-top: 12vh;
+    }
+    .date-tag-container span {
+        font-size: 90%;
     }
 } 

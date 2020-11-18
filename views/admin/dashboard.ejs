@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/admin/dashboard.css">
+    <link rel="stylesheet" href="/css/readblog.css">
     <title>Admin Dashboard</title>
 
 </head>
@@ -19,7 +20,7 @@
         <form action="/admin/user/submitpost" enctype="multipart/form-data" method="POST">
             <input type="text" id="title" name="title" placeholder="title" />
             <span id="title-msg"></span>
-            <textarea name="description" id="" cols="80" rows="10" placeholder="description"></textarea>
+            <textarea name="description" id="description" cols="80" rows="10" placeholder="description"></textarea>
             <label for="upload">Upload a file</label>
             <input id="upload" type="file" name="upload" required>
             <label for="tags">Select tags:</label>
@@ -32,6 +33,7 @@
             <label for="custom_tags">Manual tags:</label>
             <input type="text" placeholder="tags (comma seperated) " name="custom_tags" id="custom_tags">
             <button class="btn btn-success" type="submit">Submit</button>
+            <button class="btn btn-primary" id="preview-btn" type="button">Preview</button>
         </form>
         <div style="text-align: center;margin: 20px 20px;">
             <div style="background-color:bisque;display:inline-block;" class="code-sample-container">
@@ -42,6 +44,34 @@
             </div>
         </div>
     </div>
+
+
+    <hr>
+    <hr>
+    <div>
+        <h3 style="text-align: center;"> BLOG PREVIEW </h3>
+        <div class="container read-me-blog-container">
+            <div class="profile-section">
+                <a href="/#aboutme"><img class="blog-profile-pic" src="/images/propic.jpg" /></a>
+                <p>Jimmy Tran</p>
+            </div>
+            <h1 id="post-title"></h1>
+            <div class="date-tag-container">
+                <p style="display: inline;" id="post-date"><%= new Date().toLocaleString() %></p>
+                <div style="display: inline;" id="post-badges">
+                </div>
+            </div>
+            <div class="blog-img-container">
+                <img src="https://neilpatel.com/wp-content/uploads/2018/10/blog.jpg" alt="blog-picture">
+            </div>
+            <p class="read-post-description" id="read-post-description"></p>
+        </div>
+    </div>
+
+
+
+
+
     <script>
         let title = document.getElementById('title');
         let title_msg = document.getElementById('title-msg');
@@ -60,6 +90,46 @@
                 button.disabled = false;
             }
         })
+    </script>
+    <script>
+        //  get the preview button 
+        let previewBtn = document.getElementById('preview-btn');
+        // get the title
+        let theTitle = document.getElementById('title');
+        // get the descriptions
+        let description = document.getElementById('description');
+        // get the select element from the DOM
+        let selecters = document.getElementsByTagName('select')[0];
+        // get the manual tags
+        let manualTags = document.getElementById('custom_tags');
+
+        // PREVIEW DOMS
+        let blog_description = document.getElementById('read-post-description');
+
+        let div_badges = document.getElementById('post-badges');
+
+        let post_title = document.getElementById('post-title');
+
+        // listen to the preview button
+        previewBtn.addEventListener('click', function (e) {
+            div_badges.innerHTML = '';
+            let selected_options_array = [...selecters.selectedOptions];
+            console.log(theTitle.value);
+            console.log(description.value);
+            console.log(selected_options_array);
+            console.log(manualTags.value.split(','));
+            // loop through the badges and put it inside the div
+            for (var i = 0; i < selected_options_array.length; i++ ) {
+                let span = document.createElement('span');
+                span.className = 'badge badge-pill badge-primary';
+                span.innerHTML = selected_options_array[i].value;
+                div_badges.appendChild(span);
+            }
+            blog_description.innerHTML = description.value;
+            post_title.innerHTML = theTitle.value;
+        })
+
+
     </script>
 </body>
 
