@@ -13,7 +13,6 @@ router.get('/', (req, res) => {
 
     // find all posts from database and send back to the webpage
     Post.find({}, (err, posts) => {
-        console.log(posts);
         if (err) {
             res.send(err);
         } else {
