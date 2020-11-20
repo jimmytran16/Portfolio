@@ -44,6 +44,10 @@ pre {
     border-radius: 50%;
 }
 
+.blog-profile-pic:hover {
+    opacity:0.65;
+}
+
 .read-post-description { 
     word-break: break-word;
     padding:10px 5px;
