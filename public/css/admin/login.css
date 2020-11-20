@@ -1,0 +1,18 @@
+.admin-login-section {
+    text-align: center;
+    margin: 25vh 0px;
+}
+
+.admin-login-section form input {
+    height: 40px;
+    width: 100%;
+}
+
+.admin-login-section form input, .admin-login-section form button {
+    display: block;
+    margin: 10px 0px;
+}
+
+form { 
+    display: inline-block;
+}

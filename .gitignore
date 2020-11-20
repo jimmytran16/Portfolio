@@ -1,5 +1,4 @@
 /node_modules/
-configs.js
 /routes/configs.js
 .env
 .DS_Store

@@ -12,7 +12,7 @@ router.get('/',(request,res)=>{ /* Go to the repos HTML page*/
             console.log(typeof(response.data));
             //make a function to get a list of url links to the repos
             list_of_repos = getListOfRepos(response.data);
-            res.render(path.join(__dirname,'../views','index.ejs'), {'repos':list_of_repos});
+            res.render(path.join(__dirname,'../views/main','index.ejs'), {'repos':list_of_repos});
         })
         .catch(error => {
             console.log(error);

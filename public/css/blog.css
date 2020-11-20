@@ -1,0 +1,131 @@
+.blog-container .blog-caption h2 {
+    /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    font-family: 'Roboto Condensed', sans-serif !important;
+    /* font-style: italic; */
+    color:#395fa5;
+    padding:15px 10px;
+    font-size: 40px;
+}
+.row .col-md-6 .card .card-img-top {
+    height: 250px;
+}
+
+.blog-container .row div .card {
+    border-radius: unset;
+    box-shadow: 3px 3px #cccccc;
+}
+
+.blog-container { 
+    padding-top: 15vh;
+    padding-bottom: 5vh;
+}
+
+.blog-caption { 
+    text-align: center;
+    color:white!important;
+}
+
+.card-body {
+    height: 180px;
+}
+
+.card-body a .card-title {
+    color:black;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.card-body a .card-title:hover {
+    color:#656565;
+}
+
+.publisher-container a img:hover {
+    opacity:0.65
+}
+
+.publisher-container {
+    padding-left:20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.publisher-container p, .publisher-container img, .publisher-container i {
+    display: inline;
+}
+
+.card-body .card-text{ 
+    overflow:hidden;
+    height:100px;
+}
+
+.publisher-container i {
+    color:dimgrey
+}
+.publisher-container i:hover {
+    color:#c3c3c3;
+}
+
+.blog-profile-pic {
+    width: 30px;
+    height: 30px!important;
+    border-radius: 50%;
+}
+
+.card-body .row .col-md-6 button {
+    float: right;
+}
+
+.publisher-container p small {
+    padding-left:2vh;
+    padding-right:2vh;
+    font-size: 12px;
+}
+
+p {
+    margin-bottom:unset;
+}
+
+.blog-caption h2 i {
+    margin-right: 15px;
+}
+
+.badge-container {
+    margin: 0px 20px;
+}
+
+/* mobile */
+@media screen and (max-width:768px) { 
+    .card-body {
+        height: 150px;
+    }
+    .publisher-container {
+        margin-top: 10px;
+    }
+    .blog-profile-pic {
+        width: 50px;
+        height: 50px!important;
+    }
+    .badge {
+        font-size: 100%;
+    }
+
+}
+
+@media screen and (max-width:436px) {
+    .blog-container .blog-caption h2 {
+        font-size: 36px;
+    }
+}
+
+@media screen and (min-width:992px) and (max-width:1200px) {
+    .publisher-container p small {
+        padding-right: 1vh;
+        padding-left: 1vh;
+    }
+
+    .card-body .card-text{ 
+        height:60px;
+    }
+    
+}
