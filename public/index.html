@@ -5,7 +5,8 @@
   <title>Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Local styling sheet -->
   <link rel="stylesheet" href="css/mycss.css">
   <!-- FONTS -->
@@ -17,13 +18,31 @@
   <link rel="stylesheet" type="text/css" href="css/style.css" />
   <link rel="stylesheet" href="css/main/index.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+ <style>
+   .project-name{
+     opacity: 1!important;
+     color:#483f3f!important;
+     padding-top: 17px!important;
+     top: 0%!important;
+     text-decoration: underline;
+   }
 
+   @media screen and (max-width: 440px) {
+     .project-name {
+        padding-left: 13vh!important;
+        padding-right: unset!important;
+     }
+   }
+ </style>
 </head>
+
 <body>
   <header class="mainheader">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#"><img class="port_logo" src="images/portlogo_transparent.png" height="40px" width="90p" alt=""></a></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="#"><img class="port_logo" src="images/portlogo_transparent.png" height="40px"
+          width="90p" alt=""></a></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,8 +57,10 @@
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <div class="navbar-icon-container">
-            <a href="https://www.github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/jimmyviettran" target="_blank"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+            <a href="https://www.github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-lg"
+                aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/jimmyviettran" target="_blank"><i class="fa fa-linkedin-square fa-lg"
+                aria-hidden="true"></i></a>
           </div>
         </form>
       </div>
@@ -51,26 +72,29 @@
     </div>
     <section id="dg-container" class="dg-container">
       <div id="projects" class="dg-wrapper textWithBlurredBg">
-          <a href="projects/greenvoter.html" class="more">
-          <img class="proj_img" src="images/gvg.png" alt="image05"><i class="fa fa-sign-in" aria-hidden="true"></i>
+        <a href="projects/greenvoter.html" class="more">
+          <img class="proj_img" src="images/gvg.png" alt="image05">
+          <p class="project-name">Green Voter Guide MA</p>
+        </a>
+        <a href="projects/bestprogramminglanguage.html" class="more">
+          <img class="proj_img" src="images/bestprojlang.png" alt="image01">
+          <p class="project-name">Best Programming Language?</p>
         </a>
         <a href="projects/dnsproject.html" class="more">
-          <img class="proj_img" src="images/proj2.png" alt="image02"><i class="fa fa-sign-in" aria-hidden="true"></i>
-        </a>
-        <a href="projects/bookproject.html" class="more">
-          <img class="proj_img" src="images/bestprojlang.png" alt="image01"><i class="fa fa-sign-in" aria-hidden="true"></i>
+          <img class="proj_img" src="images/proj2.png" alt="image02">
+          <p class="project-name">Designer Nail Salon</p>
         </a>
         <a href="projects/blogproject.html" class="more">
-          <img class="proj_img" src="images/blog1.JPG" alt="blog-project"><i class="fa fa-sign-in" aria-hidden="true"></i>
+          <img class="proj_img" src="images/blog1.JPG" alt="blog-project">
+          <p class="project-name">CS Blog</p>
         </a>
-        <!-- <a href="projects/hpsproject.html" class="more">
-          <img class="proj_img" src="images/hpsproject.png" alt="image04"><i class="fa fa-sign-in" aria-hidden="true"></i>
-        </a> -->
-        <a href="projects/hpsproject.html" class="more">
-          <img class="proj_img" src="images/twitterclone.png" alt="image04"><i class="fa fa-sign-in" aria-hidden="true"></i>
+        <a href="projects/twitterclone.html" class="more">
+          <img class="proj_img" src="images/twitterclone.png" alt="image04">
+          <p class="project-name">Tweetir</p>
         </a>
         <a href="projects/sendcoviddata.html" class="more">
-          <img class="proj_img" src="images/sendcovid1.JPG" alt="image06"><i class="fa fa-sign-in" aria-hidden="true"></i>
+          <img class="proj_img" src="images/sendcovid1.JPG" alt="image06">
+          <p class="project-name">COVID-19 Messenger</p>
         </a>
       </div>
       <nav>
@@ -85,29 +109,42 @@
     </div>
     <div class="container">
       <div class="row aboutme-row">
-        <div class="col-md-4"><img class="profile-img" src="images/propic.jpg" alt="Avatar" height="220px" width="220px">
+        <div class="col-md-4"><img class="profile-img" src="images/propic.jpg" alt="Avatar" height="220px"
+            width="220px">
           <div style="margin:8px 0px;" class="links">
-            <a href="https://github.com/jimmytran16" target="_blank"><i class="about-me-icon fa fa-github fa-3x" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/jimmyviettran" target="_blank"><i class="about-me-icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
-            <a href="mailto:jimmy.tran005@umb.edu" target="_blank"><i class="about-me-icon fa fa-envelope-o fa-3x" aria-hidden="true"></i></a>
+            <a href="https://github.com/jimmytran16" target="_blank"><i class="about-me-icon fa fa-github fa-3x"
+                aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/jimmyviettran" target="_blank"><i
+                class="about-me-icon fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
+            <a href="mailto:jimmy.tran005@umb.edu" target="_blank"><i class="about-me-icon fa fa-envelope-o fa-3x"
+                aria-hidden="true"></i></a>
             <a href="tel:7812671202"><i class="about-me-icon fa fa-phone fa-3x" aria-hidden="true"></i></a>
           </div>
         </div>
         <div class="col-md-8">
-          <p class="aboutme-paragraph">Hello my name is Jimmy Tran. I am a Full Stack Software Engineer with a love for problem-solving and a passion for technology.
-            I love creating meaningful projects that will make an immediate impact on the world. I am a problem solver, with quick abilities to learn and adapt, and 
-            I'm looking forward to bringing my skill set and knowledge to collaborate with a team and build high quality software.
+          <p class="aboutme-paragraph">Hello my name is Jimmy Tran. I am a Full Stack Software Engineer with a love for
+            problem-solving and a passion for technology.
+            I love creating meaningful projects that will make an immediate impact on the world. I am a problem solver,
+            with quick abilities to learn and adapt, and
+            I'm looking forward to bringing my skill set and knowledge to collaborate with a team and build high quality
+            software.
           </p>
         </div>
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/jquery.gallery.js"></script>
   <script type="text/javascript">
-    $(function() {
+    $(function () {
       $('#dg-container').gallery();
     });
   </script>

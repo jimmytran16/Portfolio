@@ -2,24 +2,25 @@
 <html lang="en">
 
 <head>
-  <title>HPS Site</title>
+  <title>Best Programming Language</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- bootstrap css -->
   <link rel="icon" type="image/png" href="../images/favicon.png">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- Local styling sheet -->
-  <link rel="stylesheet" href="../css/mycss.css">
   <link rel="stylesheet" href="../css/subpage.css">
+  <link rel="stylesheet" href="../css/mycss.css">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
-
 </head>
-
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/"><img class="port_logo" src="../images/portlogo_transparent.png" height="40px" width="90p" alt=""></a></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="/"><img class="port_logo" src="../images/portlogo_transparent.png" height="40px"
+          width="90p" alt=""></a></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -28,7 +29,7 @@
           <li><a href="/index.html#projects">Projects</a></li>
           <li><a href="/index.html#aboutme">About Me</a></li>
           <li><a href="/blog">Blog</a></li>
-          <li><a href="resume/JimmyTranResume.pdf" download>
+          <li><a href="../resume/JimmyTranResume.pdf" download>
               Resume <span><i class="fa fa-cloud-download" aria-hidden="true"></i></span>
             </a></li>
         </ul>
@@ -40,11 +41,15 @@
         </form>
       </div>
     </nav>
-</header>
+  </header>
+
   <div class="container its-a-wrap">
+    <!-- Portfolio Item Row -->
     <div class="row">
       <div class="col-md-8">
-        <h1 class="my-project-title">HPS School Website</h1>
+        <!-- Portfolio Item Heading -->
+        <h1 class="my-project-title">Best Programming Language
+        </h1>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -54,16 +59,7 @@
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img class="d-block w-100" src="../images/hpsproject.png" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../images/hps2.JPG" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../images/hps3.JPG" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="../images/hps4.JPG" alt="Fourth slide">
+              <img class="d-block w-100" src="../images/bestprojlang.gif" alt="First slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -76,31 +72,33 @@
           </a>
         </div>
         <div class="web-code-btn">
-          <a href="https://www.github.com/jimmytran16/hack" target="_blank"><button class="btn btn-primary">Source code</button></a>
-          <a href="http://app-hps.herokuapp.com" target="_blank"><button class="btn btn-primary">Website</button></a>
+          <a href="https://github.com/jimmytran16/Programming-Survey" target="_blank"><button class="btn btn-primary">Source
+              code</button></a>
+          <a href="https://programming-survey.netlify.app/" target="_blank"><button
+              class="btn btn-primary ">Website</button></a>
         </div>
       </div>
       <div class="col-md-4 project-des">
         <h1 class="my-project-title">Project Description</h1>
-        <p>Created a website that would help After School Programs and Public Schools better communicate their
-          student's data. This website includes a user log in authentication for teachers and after school staffs to log in. A activity log's page to log
-          the staff's activities such as submitting disciplinary/incident forms in real-time. Student's behavior page to keep track of
-          their progress by converting their grades into graph representations. A submission forms page for staffs to upload any disciplinary or incident that
-          happened throughout the day.
+        <p>
+          A full stack application made with React.js, Chart.js, Node.js/Express, and MongoDB. Used Netlify and Heroku for deployment.
+          This website contains a survey which prompts participants to choose which programming language they most prefer, and will show a count in visual graphs of the overall votes in real time.
+          This was my first full stack application implementing the MERN stack.          
         </p>
         <h1 class="my-project-title">Technologies</h1>
         <ul>
-          <li>Python</li>
-          <li>Flask</li>
-          <li>MySQL</li>
-          <li>HTML5,CSS3</li>
-          <li>Javascript</li>
+          <li>React.js</li>
+          <li>Node/Express.js</li>
+          <li>Chart.js</li>
+          <li>Netlify</li>
+          <li>Heroku</li>
+          <li>MongoDB</li>
         </ul>
       </div>
     </div>
     <div class="flow_content project-des">
       <h1 class="my-project-title">Project's Design</h1>
-      <img src="../images/hps.png" alt="">
+      <img src="../images/bestproglangdesign.png" alt="">
     </div>
   </div>
 
