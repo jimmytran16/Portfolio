@@ -5,9 +5,10 @@ if (process.env.NODE_ENV != 'production') {
 // Load depencendies used for app
 const express = require('express');
 const router = express.Router();
-const BlogUtil = require('../util/blogUtils');
-const Post = require('../../model/posts');
 const configs = require('./configs');
+const submitPostController = require('../../controllers/submitPostController')
+const adminLoginController = require('../../controllers/adminLoginController')
+const { authenticateLoggedinUser,checkIfUserisLoggedIn } = require('./middlewares')
 
 // Load dependencies for s3
 const aws = require('aws-sdk');
@@ -39,24 +40,6 @@ const upload = multer({
     })
 })
 
-// authentication middleware
-var authenticateLoggedinUser = function (req, res, next) {
-    if (req.session && req.session.user === "jimmytran16" && req.session.admin){
-        console.log(req.session);
-        return next();
-    }
-    else{
-        return res.sendStatus(401);
-    }
-};
-
-// middleware function to check if the user is logged in 
-var checkIfUserisLoggedIn = function (req, res, next ) {
-    if (req.session && req.session.user === process.env.ADMIN_USER && req.session.admin)
-        return res.redirect(configs.DASHBOARD_URL)
-    else
-        return next();
-}
 
 /* ADMIN */
 
@@ -80,15 +63,16 @@ router.post(`/${configs.LOGIN_URL}`, (req, res) => {
         res.send('Username or password field not sent in!');
         res.end();
     } else { // if it is sent, then validate the username and password -- store the info into the session if successfully authenticated
-        if (req.body.username == process.env.ADMIN_USER && req.body.password == process.env.ADMIN_PASSW) {
-            req.session.user = req.body.username;
-            req.session.admin = true;
-            res.redirect(configs.DASHBOARD_URL);
-        }
-        else {
-            let message = 'error';
-            res.redirect(`${configs.LOGIN_URL}?msg=` + message);
-        }
+        adminLoginController(req.body.username, req.body.password, (err) => {
+            if (err) {
+                res.redirect(`${configs.LOGIN_URL}?msg=` + err);
+            }else {
+                req.session.user = req.body.username;
+                req.session.admin = true;
+                res.redirect(configs.DASHBOARD_URL);
+            }
+        })
+
     }
 })
 
@@ -109,38 +93,22 @@ router.post(`/${configs.LOGOUT_URL}`, (req, res) => {
 // route to submit the post
 // pass in the upload middleware to upload the file that is being passed in
 router.post(`/${configs.SUBMIT_URL}`, upload.single('upload'), (req, res) => {
+    // validate to see if the file was uploaded
+    if (!req.file.location) { res.send('error uploading file, no file was selected!'); res.end() }
+
     // console.log(req.body);
     let title = req.body.title;
     let description = req.body.description;
     let tags = req.body.tags;
     let custom_tags = req.body.custom_tags
-    console.log(req.body);
-    
-    // validate if the tag is passed in
-    if (!tags) {
-        tags = [];
-    }
+    let file_location = req.file.location
 
-    // validate to see if the file was uploaded
-    if (!req.file.location) { res.send('error uploading file, no file was selected!'); res.end() }
-
-    // create a post object
-    let post = new Post({
-        title: title,
-        description: description,
-        minutes: BlogUtil.calculateReadTimePerPost(description),
-        img_path: req.file.location,
-        tags: BlogUtil.proccessTags(( Array.isArray(tags) ? tags : Array(tags) ), ( custom_tags === '' ? null : custom_tags.split(',') ) ) 
-    })
-
-    // save the post to the database
-    post.save((err, result) => {
+    submitPostController(title,description,tags,custom_tags,file_location,(err) => {
         if (err) {
             console.log(err);
             res.send(err);
             res.end();
-        }
-        else {
+        }else {
             res.redirect(configs.DASHBOARD_URL);
         }
     })

@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const repoUtils  = require('./util/repoUtils.js')
+const repoUtils  = require('../utils/repoUtils')
 const axios = require('axios');
 const router = express.Router()
 if(process.env.NODE_ENV !=='production'){require('dotenv').config();}
