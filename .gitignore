@@ -2,3 +2,4 @@
 /routes/configs.js
 .env
 .DS_Store
+src/configs
