@@ -1,13 +1,11 @@
 const express = require('express')
-const indexRouter = require('./routes/home')
-const adminRouter = require('./routes/admin/admin')
-const blogRouter = require('./routes/blog');
+const indexRouter = require('./src/routes/home')
+const adminRouter = require('./src/routes/admin/admin')
+const blogRouter = require('./src/routes/blog');
 const path = require('path');
 const mongoose = require('mongoose');
 const app = express();
-const Post = require('./model/posts');
 const session = require('express-session');
-const PORT = process.env.PORT || 3000; //Set PORT
 var TIME_TO_CACHE = '0';
 
 // If this is not a production server, then look for the local .env file

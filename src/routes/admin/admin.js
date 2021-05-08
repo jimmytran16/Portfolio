@@ -8,38 +8,7 @@ const router = express.Router();
 const configs = require('./configs');
 const submitPostController = require('../../controllers/submitPostController')
 const adminLoginController = require('../../controllers/adminLoginController')
-const { authenticateLoggedinUser,checkIfUserisLoggedIn } = require('./middlewares')
-
-// Load dependencies for s3
-const aws = require('aws-sdk');
-const multer = require('multer');
-const multerS3 = require('multer-s3');
-
-// Declare variables used for s3 configs
-const DO_ENDPOINT = process.env.s3_ENDPOINT;
-const spacesEndpoint = new aws.Endpoint(DO_ENDPOINT);
-
-// Declare an s3 instance and setting up it's configurations
-const s3 = new aws.S3({
-    endpoint: spacesEndpoint,
-    apiVersion: '2006-03-01',
-    secretAccessKey: process.env.aws_secret_access_key,
-    accessKeyId: process.env.aws_access_key_id
-});
-
-// upload function for uploading the images to the s3 bucket
-const upload = multer({
-    storage: multerS3({
-        s3: s3,
-        bucket: process.env.BUCKET_NAME,
-        acl: 'public-read',
-        contentType: multerS3.AUTO_CONTENT_TYPE,
-        key: function (request, file, cb) {
-            cb(null, Date.now().toString() + '-' + file.originalname);
-        }
-    })
-})
-
+const { authenticateLoggedinUser, checkIfUserisLoggedIn, upload } = require('./middlewares')
 
 /* ADMIN */
 
@@ -66,7 +35,7 @@ router.post(`/${configs.LOGIN_URL}`, (req, res) => {
         adminLoginController(req.body.username, req.body.password, (err) => {
             if (err) {
                 res.redirect(`${configs.LOGIN_URL}?msg=` + err);
-            }else {
+            } else {
                 req.session.user = req.body.username;
                 req.session.admin = true;
                 res.redirect(configs.DASHBOARD_URL);
@@ -81,7 +50,7 @@ router.get(`/${configs.DASHBOARD_URL}`, authenticateLoggedinUser, (req, res) => 
     let code_sample = configs.CODE_SAMPLE;
     // set dashboard to have no cache, so user can't use back button to go back to content after they log out
     res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
-    res.render('admin/dashboard.ejs', {code:code_sample});
+    res.render('admin/dashboard.ejs', { code: code_sample });
 })
 
 // route to logout
@@ -90,28 +59,40 @@ router.post(`/${configs.LOGOUT_URL}`, (req, res) => {
     res.redirect(configs.LOGIN_URL);
 })
 
-// route to submit the post
-// pass in the upload middleware to upload the file that is being passed in
-router.post(`/${configs.SUBMIT_URL}`, upload.single('upload'), (req, res) => {
-    // validate to see if the file was uploaded
-    if (!req.file.location) { res.send('error uploading file, no file was selected!'); res.end() }
+const multer = require('multer')
 
-    // console.log(req.body);
-    let title = req.body.title;
-    let description = req.body.description;
-    let tags = req.body.tags;
-    let custom_tags = req.body.custom_tags
-    let file_location = req.file.location
+// Initiating a memory storage engine to store files as Buffer objects
+const uploader = multer({
+    storage: multer.memoryStorage(),
+    limits: {
+        fileSize: 5 * 1024 * 1024, // limiting files size to 5 MB
+    },
+});
 
-    submitPostController(title,description,tags,custom_tags,file_location,(err) => {
-        if (err) {
-            console.log(err);
-            res.send(err);
-            res.end();
-        }else {
-            res.redirect(configs.DASHBOARD_URL);
+router.post(`/${configs.SUBMIT_URL}`, uploader.single('upload'), (req, res, next) => {
+
+    try {
+
+        if (!req.file) {
+            res.status(400).send('Error, could not upload file');
+            return;
         }
-    })
+
+        submitPostController(req, (err) => {
+            if (err) {
+                console.log(err);
+                res.send(err);
+                res.end();
+            } else {
+                res.redirect(configs.DASHBOARD_URL);
+            }
+        })
+
+    } catch (error) {
+        res.status(400).send(`Error, could not upload file: ${error}`);
+        return;
+    }
+
 })
 
 module.exports = router;
