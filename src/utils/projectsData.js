@@ -6,6 +6,7 @@ module.exports = {
             sub_headline: 'A congressional voters guide tool',
             image_path: '/images/gvg.png',
             design_path: '/images/gvgdesign.jpg',
+            giphy_path:'/images/greenvotergif.gif',
             tech: [
                 'HMTL5/CSS3',
                 'Javascript',
@@ -23,6 +24,7 @@ module.exports = {
             sub_headline: 'A local nail salon website application',
             image_path: '/images/dns1.JPG',
             design_path: '/images/gvgdesign.jpg',
+            giphy_path:'/images/designergif.gif',
             tech: [
                 'HTML5,CSS3',
                 'Bootstrap',
@@ -38,7 +40,8 @@ module.exports = {
             name: "Tweetir",
             sub_headline: 'A twitter clone',
             image_path: '/images/twitterclone.png',
-            design_path: '/images/gvgdesign.jpg',
+            design_path: '/images/tweetirdesign.png',
+            giphy_path:'/images/twitterclone6.png',
             tech: [
                 'React.js',
                 'Node/Express.js',
@@ -54,6 +57,7 @@ module.exports = {
             sub_headline: 'Survey for most popular programming lanuage',
             image_path: '/images/bestprojlang.png',
             design_path: '/images/bestproglangdesign.png',
+            giphy_path:'/images/bestprojlang.gif',
             tech: [
                 'React.js',
                 'Node/Express.js',
@@ -65,10 +69,11 @@ module.exports = {
         },
         '5': {
             description: "A RESTful API used to automate appointment confirmations",
-            name: "Designer Confirmation API",
+            name: "Designer's Confirmation API",
             sub_headline: 'RESTful API for appointment confirmations',
-            image_path: '/images/dns1.JPG',
-            design_path: '/images/gvgdesign.jpg',
+            image_path: '/images/confirmapidesign.png',
+            design_path: '/images/confirmapidesign.png',
+            giphy_path:'/images/confirmapi_gif.gif',
             tech: [
                 'Python/Flask',
                 'Twilio',              
@@ -77,10 +82,11 @@ module.exports = {
         },
         '6': {
             description: "A COVID-19 status tool",
-            name: "COVID-19 Messenger",
-            sub_headline: 'A COVID-19 status tool',
+            name: "COVID-19 Tracker",
+            sub_headline: 'A COVID-19 tracker tool',
             image_path: '/images/covid.png',
             design_path: '',
+            giphy_path:'/images/covidgif.gif',
             tech: [
                 'HTML5,CSS3',
                 'Javascript',
@@ -99,14 +105,14 @@ module.exports = {
         },
         {
             name: "Designer Confirmation API",
-            image_path: '/images/dns1.JPG',
+            image_path: '/images/confirmapidesign.png',
             description: 'RESTful API for appointment confirmations',
             endpoint: '/project/5'
         },
         {
-            name: "COVID-19 Messenger",
+            name: "COVID-19 Tracker",
             image_path: '/images/covid.png',
-            description: 'A COVID-19 status tool',
+            description: 'A COVID-19 tracker tool',
             endpoint: '/project/6'
         },
         {

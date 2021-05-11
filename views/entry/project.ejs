@@ -31,6 +31,16 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	<style>
+		@media only screen and (min-width: 300px) and (max-width: 640px) {
+			.arrow {
+				bottom:5px!important;
+			}
+			.lift{
+				bottom:0px!important;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -91,6 +101,9 @@
 							<span class="meta">
 								<%= data['sub_headline']%>
 							</span>
+							<div style="display: block;">
+								<a class="smoth-scroll" href="#post"><i class="fa fa-angle-down arrow"></i></a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -110,8 +123,11 @@
 						<%= data['description']%>
 					</p>
 
-					<br>
+					<a href="<%= data['giphy_path']%>" class="image-popup">
+						<img src="<%= data['giphy_path']%>" alt="">
+					</a>
 
+					<br>
 					<h2 class="post-title">Technologies</h2>
 					
 					<ul>
@@ -152,7 +168,7 @@
 					<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 				</ul>
 
-				<p>© 2018 Dew. made by vavelo</p>
+				<p>© 2021 Jimmy Tran</p>
 			</div>
 		</div>
 	</footer>
