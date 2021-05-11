@@ -1221,7 +1221,9 @@ fieldset {
 .post-container img {
 	max-width: 100%;
 	/* padding: 40px 0; */
-	margin: 40px 0px;
+	/* margin: 40px 0px; */
+	margin-top: 10px;
+	margin-bottom: 40px;
 	border:1px #a2a2a2 solid;
 }
 

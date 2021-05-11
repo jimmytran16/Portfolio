@@ -34,12 +34,16 @@
 	<style>
 		@media only screen and (min-width: 300px) and (max-width: 640px) {
 			.arrow {
-				bottom:5px!important;
+				bottom: 5px !important;
 			}
-			.lift{
-				bottom:0px!important;
+
+			.lift {
+				bottom: 0px !important;
 			}
 		}
+		.post-container a img {
+			margin-bottom: 10px;
+		} 
 	</style>
 </head>
 
@@ -127,19 +131,29 @@
 						<img src="<%= data['giphy_path']%>" alt="">
 					</a>
 
+					<div>
+						<% if (!(data['website']=='' )) { %>
+							<a href="<%= data['website']%>" target="_blank" class="btn btn-dark">View <i
+									style="margin-left:3px;" class="fa fa-external-link"></i></a>
+							<% } %>
+
+						<% if (!(data['repo']=='' )) { %>
+							<a href="<%= data['repo']%>" target="_blank" class="btn btn-dark">Code <i
+									style="margin-left:3px;" class="fa fa-code"></i></a>
+							<% } %>
+
+					</div>
+
 					<br>
+
 					<h2 class="post-title">Technologies</h2>
-					
+
 					<ul>
-						<%
-						let techList = data['tech'];
-						for (var i = 0; i < techList.length; i++) { %>
+						<% let techList=data['tech']; for (var i=0; i < techList.length; i++) { %>
 							<li>
 								<%=techList[i]%>
 							</li>
-					<%	}
-
-					%>
+							<% } %>
 					</ul>
 
 					<br>

@@ -16,12 +16,14 @@ module.exports = {
                 'Google Places API',
                 'Heroku',
                 'Digital Ocean'
-            ]
+            ],
+            website: 'https://www.greenvoterguidema.com',
+            repo: ''
         },
         '2': {
             description: "A fully responsive nail salon website made for a local small business. This website includes a landing page, contacts page, services page, and a google's reviews section. Integrated the JavaMail API to implement a Simple Mail Transfers Protocol (SMTP) to send out appoinment forms submitted by customers to the business email.",
             name: "Designer Nail Salon",
-            sub_headline: 'A local nail salon website application',
+            sub_headline: 'A local nail salon web application',
             image_path: '/images/dns1.JPG',
             design_path: '/images/gvgdesign.jpg',
             giphy_path:'/images/designergif.gif',
@@ -33,7 +35,9 @@ module.exports = {
                 'Apache Maven',
                 'JavaMail API',
                 'Heroku'                             
-            ]
+            ],
+            website: 'https://www.designernailsalon.com',
+            repo: 'https://github.com/jimmytran16/designer-nail-salon'
         },
         '3': {
             description: "A social media full stack application which includes features such as register/login, posting tweets, and interacting with user’s tweets. Implemented a RESTful API using Express as a backend framework, and using JWT (Json Web Tokens) for stateless authentication. Technologies: React.js, Node.js/Express, MongoDB, Firebase Cloud Storage, Netlify (to host client), Heroku (to host server).",
@@ -49,7 +53,9 @@ module.exports = {
                 'MongoDB',
                 'Heroku',               
                 'Netlify',               
-            ]
+            ],
+            website: 'https://tweetir.netlify.app/',
+            repo: 'https://github.com/jimmytran16/twitter-clone'
         },
         '4': {
             description: "A full stack application made with React.js, Chart.js, Node.js/Express, and MongoDB. Used Netlify and Heroku for deployment. This website contains a survey which prompts participants to choose which programming language they most prefer, and will show a count in visual graphs of the overall votes in real time. This was my first full stack application implementing the MERN stack.",
@@ -65,7 +71,9 @@ module.exports = {
                 'MongoDB',
                 'Heroku',               
                 'Netlify',               
-            ]
+            ],
+            website: 'https://programming-survey.netlify.app/',
+            repo: 'https://github.com/jimmytran16/Programming-Survey'
         },
         '5': {
             description: "A RESTful API used to automate appointment confirmations",
@@ -78,14 +86,16 @@ module.exports = {
                 'Python/Flask',
                 'Twilio',              
                 'Heroku'               
-            ]
+            ],
+            website:'https://www.designernailsalon.com/bookings',
+            repo:'https://github.com/jimmytran16/DNSConfirmationAPI'
         },
         '6': {
-            description: "A COVID-19 status tool",
+            description: "Created a web scraper using Python and BeautifulSoup to extract COVID-19 data of all 50 states. I then decided to integrate that into a web application. This tool will send you real-time data on all 50 states in the United States in table format. Data includes total cases, new cases, total deaths, and new deaths.",
             name: "COVID-19 Tracker",
             sub_headline: 'A COVID-19 tracker tool',
             image_path: '/images/covid.png',
-            design_path: '',
+            design_path: '/images/coviddesign.jpg',
             giphy_path:'/images/covidgif.gif',
             tech: [
                 'HTML5,CSS3',
@@ -93,7 +103,9 @@ module.exports = {
                 'Python/Flask',
                 'BeautifulSoup',
                 'AWS Elastic Beanstalk',                             
-            ]
+            ],
+            website:'https://send-covid-data.herokuapp.com/',
+            repo:'https://github.com/jimmytran16/send-covid-data-website'
         }
     },
     indexPage: [
