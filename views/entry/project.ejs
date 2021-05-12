@@ -41,9 +41,10 @@
 				bottom: 0px !important;
 			}
 		}
+
 		.post-container a img {
 			margin-bottom: 10px;
-		} 
+		}
 	</style>
 </head>
 
@@ -93,7 +94,7 @@
 	<!-- // NAVIGATION END -->
 
 	<!-- // HEADER BEGIN -->
-	<div id="header" class="home-bg" style="background-image: url('/assets/img/blog/blog-1.jpg')">
+	<div id="header" class="home-bg" style="background-image: url('https://www.wallpaperflare.com/static/471/767/754/abstract-ae-plexus-blue-dot-wallpaper.jpg')">
 		<div class="overlay-blog">
 			<div class="container">
 				<div class="row">
@@ -132,15 +133,16 @@
 					</a>
 
 					<div>
-						<% if (!(data['website']=='' )) { %>
+						<%  /* Check to see if project includes a website */
+						if (!(data['website']=='' )) { %>
 							<a href="<%= data['website']%>" target="_blank" class="btn btn-dark">View <i
 									style="margin-left:3px;" class="fa fa-external-link"></i></a>
 							<% } %>
 
-						<% if (!(data['repo']=='' )) { %>
-							<a href="<%= data['repo']%>" target="_blank" class="btn btn-dark">Code <i
-									style="margin-left:3px;" class="fa fa-code"></i></a>
-							<% } %>
+								<% if (!(data['repo']=='' )) { %>
+									<a href="<%= data['repo']%>" target="_blank" class="btn btn-dark">Code <i
+											style="margin-left:3px;" class="fa fa-code"></i></a>
+									<% } %>
 
 					</div>
 
@@ -157,12 +159,13 @@
 					</ul>
 
 					<br>
-
-					<h2 class="post-title">Design</h2>
-
-					<a href="<%= data['design_path']%>" class="image-popup">
-						<img src="<%= data['design_path']%>" alt="">
-					</a>
+					<% /* Check to see if the project includes a design */ 
+					if (data['design_path'] !='' ) { %>
+						<h2 class="post-title">Design</h2>
+						<a href="<%= data['design_path']%>" class="image-popup">
+							<img src="<%= data['design_path']%>" alt="">
+						</a>
+					<% } %>
 
 				</div>
 			</div>
@@ -175,11 +178,8 @@
 		<div class="container">
 			<div class="col-md-8 col-md-offset-2 text-center">
 				<ul class="social-icons-footer">
-					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="#"><i class="fa fa-behance"></i></a></li>
-					<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+					<li><a href="https://www.github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/jimmyviettran" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
 				</ul>
 
 				<p>© 2021 Jimmy Tran</p>

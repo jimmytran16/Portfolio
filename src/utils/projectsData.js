@@ -25,7 +25,7 @@ module.exports = {
             name: "Designer Nail Salon",
             sub_headline: 'A local nail salon web application',
             image_path: '/images/dns1.JPG',
-            design_path: '/images/gvgdesign.jpg',
+            design_path: '',
             giphy_path:'/images/designergif.gif',
             tech: [
                 'HTML5,CSS3',
