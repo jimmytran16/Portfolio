@@ -1004,6 +1004,7 @@ body {
 
 .blog-item .blog-desc p {
 	margin-bottom: 15px;
+	font-size: 14px;
 }
 
 .blog-item:hover .blog-img img {

@@ -10,7 +10,16 @@ const getAllBlogsController = require('../controllers/getAllBlogsController')
 router.get('/',(request,response)=>{
     // response.sendFile(path.join(__dirname,'../public','index.html'));
     let data = projectData.indexPage
-    response.render('entry/index' , { data:data })
+    let blogs = []
+    // use the controller to get all blog posts
+    getAllBlogsController((err,blogData) =>  {
+        if (err) console.log(err);
+        else {
+            blogs = blogData;
+        }
+        console.log(blogData)
+        response.render('entry/index' , { data:data, blogs:blogs })
+    });
 });
 
 module.exports = router;
