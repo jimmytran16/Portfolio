@@ -1,3 +1,5 @@
+'use strict'
+
 // function to calculate the read time for the posts
 const calculateReadTimePerPost = (text)  => {
     const WORDS_PER_MINUTE = 200;

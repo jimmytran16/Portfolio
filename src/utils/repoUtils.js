@@ -1,3 +1,4 @@
+'use strict'
 
 /* function to sort the date in descending order */
 function sortByDate(list){

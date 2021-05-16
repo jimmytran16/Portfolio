@@ -93,7 +93,7 @@ module.exports = {
         '6': {
             description: "Created a web scraper using Python and BeautifulSoup to extract COVID-19 data of all 50 states. I then decided to integrate that into a web application. This tool will send you real-time data on all 50 states in the United States in table format. Data includes total cases, new cases, total deaths, and new deaths.",
             name: "COVID-19 Tracker",
-            sub_headline: 'A COVID-19 tracker tool',
+            sub_headline: 'A COVID-19 tracking tool',
             image_path: '/images/covid.png',
             design_path: '/images/coviddesign.jpg',
             giphy_path:'/images/covidgif.gif',
@@ -124,13 +124,13 @@ module.exports = {
         {
             name: "COVID-19 Tracker",
             image_path: '/images/covid.png',
-            description: 'A COVID-19 tracker tool',
+            description: 'A COVID-19 tracking tool',
             endpoint: '/project/6'
         },
         {
             name: "Designer Nail Salon",
             image_path: '/images/dns1.JPG',
-            description: 'A local nail salon website application',
+            description: 'A local nail salon web application',
             endpoint: '/project/2'
         },
         {

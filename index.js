@@ -1,8 +1,11 @@
+'use strict'
+
 const express = require('express')
 const indexRouter = require('./src/routes/home')
 const adminRouter = require('./src/routes/admin/admin')
 const blogRouter = require('./src/routes/blog');
 const projectRouter = require('./src/routes/projects')
+const error404Router = require('./src/routes/404')
 const path = require('path');
 const mongoose = require('mongoose');
 const morgan = require('morgan')
@@ -57,6 +60,7 @@ mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true }, (err) => {
         app.use('/blog', blogRouter);
         app.use('/project',projectRouter);
         app.use(`/${process.env.BASE_ROUTER_ADMIN}`,adminRouter);
+        app.use('*', error404Router);
 })
 
 

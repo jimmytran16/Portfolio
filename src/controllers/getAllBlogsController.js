@@ -1,3 +1,5 @@
+'use strict'
+
 const Post = require('../model/posts')
 
 // function to get the posts from the database

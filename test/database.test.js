@@ -1,6 +1,8 @@
 require('dotenv').config();
 const app = require('../index');
 const supertest = require('supertest');
+'use strict'
+
 const request = supertest(app);
 const Post = require('../model/posts');
 const mongoose = require('mongoose');

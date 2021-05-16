@@ -1,3 +1,5 @@
+'use strict'
+
 const BlogUtil = require('../utils/blogUtils')
 const Post = require('../model/posts')
 const { Storage } = require('@google-cloud/storage');

@@ -1,3 +1,5 @@
+'use strict'
+
 // use .env file during development
 if (process.env.NODE_ENV != 'production') require('dotenv').config();
 

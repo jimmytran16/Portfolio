@@ -1,3 +1,5 @@
+'use strict'
+
 const mongoose = require('mongoose');
 
 // Schema used for blog posts

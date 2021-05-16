@@ -1,7 +1,8 @@
+'use strict'
+
 // use .env file during development
-if (process.env.NODE_ENV != 'production') {
-    require('dotenv').config();
-}
+if (process.env.NODE_ENV != 'production') require('dotenv').config();
+
 // Load depencendies used for app
 const express = require('express');
 const router = express.Router();

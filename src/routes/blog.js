@@ -1,11 +1,11 @@
+'use strict'
 // configurate the .env file when it is not in production
-if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
-}
-const readMoreController = require('../controllers/readMoreController')
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
 const express = require('express');
-const getAllBlogsController = require('../controllers/getAllBlogsController')
 const router = express.Router();
+const getAllBlogsController = require('../controllers/getAllBlogsController')
+const readMoreController = require('../controllers/readMoreController')
 
 // route of the blog
 router.get('/', (req, res) => {
