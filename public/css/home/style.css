@@ -1,0 +1,45 @@
+@media screen and (max-width:768px) {
+    .blog-desc {
+        margin-bottom: 15px;
+    }
+    .blog-item .blog-desc h4 , .blog-description-p {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    margin-top:40px;
+}
+
+.social-icons li a {
+    margin-right: 5px;
+}
+.resume-button {
+    margin-top: 20px;
+}
+
+.badge-container span {
+    margin-right: 5px;
+}
+
+.blog-item-container {
+    margin-top: 30px;
+    box-shadow: 0 0 10px gray;
+}
+
+.blog-item-container .blog-img {
+    margin-top: 0px!important;
+}
+
+.date-minute-container p{
+    font-size: 12px!important;
+    font-weight: 100;
+}
+
+.contact-icon:hover {
+    color:green!important;
+}

@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="assets/css/magnific-popup.css">
 	<link rel="stylesheet" href="assets/css/flexslider.css">
 	<link rel="stylesheet" href="assets/css/aos.css">
+	<link rel="stylesheet" href="/css/home/style.css">
 
 	<!-- main css -->
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -30,49 +31,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-	<style>
-		@media screen and (max-width:768px) {
-			.blog-desc {
-				margin-bottom: 15px;
-			}
-			.blog-item .blog-desc h4 , .blog-description-p {
-				margin-left: 10px;
-				margin-right: 10px;
-			}
-		}
-
-		.social-icons {
-			display: flex;
-			justify-content: flex-start;
-			margin-bottom: 20px;
-			margin-top:40px;
-		}
-
-		.social-icons li a {
-			margin-right: 5px;
-		}
-		.resume-button {
-			margin-top: 20px;
-		}
-
-		.badge-container span {
-			margin-right: 5px;
-		}
-
-		.blog-item-container {
-			margin-top: 30px;
-			box-shadow: 0 0 10px gray;
-		}
-
-		.blog-item-container .blog-img {
-			margin-top: 0px!important;
-		}
-
-		.date-minute-container p{
-			font-size: 12px!important;
-			font-weight: 100;
-		}
-	</style>
 </head>
 
 <body>
@@ -171,12 +129,6 @@
 							<i class="fa fa-download"></i>
 						</a>
 					</ul>
-					<p>
-						<!-- <a href="/resume/JimmyVTResume.pdf" target="_blank" class="btn btn-dark with-arrow smoth-scroll resume-button">My Resume
-							<i class="fa fa-download"></i>
-						</a> -->
-					</p>
-
 				</div>
 				</div>
 			</div>
@@ -276,27 +228,29 @@
 
 				<div class="address-icons col-md-8 col-md-offset-2">
 					<div class="col-md-4 col-sm-4">
-						<i class="fa fa-envelope fa-2x"></i>
-						<p>dew@email.com</p>
+						<a href="mailto:jimmy.tran005@umb.edu" target="_blank" class="">
+							<i class="fa fa-envelope fa-2x contact-icon"></i>
+						</a>
+						<p>jimmy.tran005@umb.edu</p>
 					</div>
 
-					<div class="col-md-4 col-sm-4">
+					<div id="location-container" class="col-md-4 col-sm-4">
 						<i class="fa fa-map-marker fa-2x"></i>
-						<p>Banguntapan,
-							<br> Yogyakarta, ID 55198
-						</p>
+						<p>Boston, MA</p>
 					</div>
 
 					<div class="col-md-4 col-sm-4">
-						<i class="fa fa-phone fa-2x"></i>
-						<p>+62 123 456 7890</p>
+						<a href="tel:7812671202" class="">
+							<i class="fa fa-phone fa-2x contact-icon"></i>
+						</a>
+						<p>+1 781-267-1202</p>
 					</div>
 					<div class="clearfix"></div>
 				</div>
 
 				<div class="col-md-8 col-md-offset-2">
 					<!-- changes your email domain in mailer.php (assets/php/) -->
-					<form id="ajax-contact" name="contact" method="post" action="assets/php/mailer.php">
+					<form id="ajax-contact" method="post" action="/contact/send-message">
 						<div class="row">
 							<div class="col-md-6 col-sm-6">
 								<div class="form-group">
@@ -321,7 +275,11 @@
 						<div class="col-md-12 col-xs-12">
 							<button id="submit" type="submit" name="submit" class="btn btn-dark">Send Message</button>
 						</div>
-						<div id="form-messages" class="col-md-12 col-xs-12"></div>
+						<% if (message) { %>
+						<div id="form-messages" class="col-md-12 col-xs-12 <%= success === true ? 'success' : 'error' %>">
+								<span><%= message %></span>	
+							<% } %>
+						</div>
 					</form>
 				</div>
 			</div>
@@ -355,7 +313,7 @@
 	<script src="assets/js/magnific-popup-options.js"></script>
 	<script src="assets/js/jquery.flexslider-min.js"></script>
 	<script src="assets/js/aos.js"></script>
-	<script src="assets/js/app.js"></script>
+	<!-- <script src="assets/js/app.js"></script> -->
 
 	<script src="assets/js/main.js"></script>
 </body>
