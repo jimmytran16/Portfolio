@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blog</title>
+
+	<!-- tab img -->
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+
+	<!-- css plugin -->
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="/assets/css/flexslider.css">
+	<link rel="stylesheet" href="/assets/css/aos.css">
+	<link rel="stylesheet" href="/assets/css/aos.css">
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/main/index.css">
+	<link rel="stylesheet" href="/css/readblog.css">
+
+
+	<!-- main css -->
+	<link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/style-responsives.css">
+
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Hind:600|Lato:300,400" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+		@media only screen and (min-width: 300px) and (max-width: 640px) {
+			.arrow {
+				bottom: 5px !important;
+			}
+
+			.lift {
+				bottom: 0px !important;
+			}
+		}
+
+		p {
+			font-size: 14px!important;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<!-- // PRELOADER BEGIN -->
+	<div id="preloader">
+		<div id="status">
+			<div class="loader-revolve center">
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<!-- // PRELOADER END -->
+
+	<!-- // NAVIGATION BEGIN -->
+	<div id="navigation">
+		<div class="container">
+			<div class="col-sm-3">
+				<div class="logo">
+					<a href="/">Jimmy Tran</a>
+				</div>
+			</div>
+
+			<div class="col-sm-9">
+				<div class="navigation-menu">
+					<div class="navbar">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse"
+								data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+
+						<div class="navbar-collapse collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li class="active"><a class="smoth-scroll" href="/">Back</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // NAVIGATION END -->
+
+	<!-- // HEADER BEGIN -->
+	<div id="header" class="home-bg" style="background-image: url('https://www.wallpaperflare.com/static/471/767/754/abstract-ae-plexus-blue-dot-wallpaper.jpg')">
+		<div class="overlay-blog">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+						<div class="post-heading text-center">
+							<h1 class="f-white">
+								<%= posts.title %>
+							</h1>
+							<span class="meta">
+								<%= posts.date.split(',')[0] %>
+							</span>
+							<div style="display: block;">
+								<a class="smoth-scroll" href="#read-me-blog-container"><i class="fa fa-angle-down arrow"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // HEADER END -->
+
+
+	<div class="container read-me-blog-container" id="read-me-blog-container">
+		<div class="profile-section">
+		  <a href="/#about"><img class="blog-profile-pic" src="/images/propic.jpg" /></a>
+		  <p>Jimmy Tran</p>
+		</div>
+		<!-- <h1><%= posts.title %></h1> -->
+		<div class="date-tag-container">
+		  <% for (var x = 0; x < posts.tags.length; x++) { %>
+		  <span class="badge badge-pill <%=posts.tags[x][1]%>"> <%= posts.tags[x][0] %> </span>
+		  <% } %>
+		  <!-- <p><%= posts.date.split(',')[0] %></p> -->
+		</div>
+		<div class="blog-img-container">
+		  <img src="<%=posts.img_path%>" alt="blog-picture">
+		</div>
+		<p class="read-post-description"><%- posts.description %></p>
+	  </div>
+
+	<!-- // FOOTER BEGIN -->
+	<footer id="footer-post">
+		<div class="container">
+			<div class="col-md-8 col-md-offset-2 text-center">
+				<ul class="social-icons-footer">
+					<li><a href="https://www.github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/jimmyviettran" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+				</ul>
+
+				<p>© 2021 Jimmy Tran</p>
+			</div>
+		</div>
+	</footer>
+	<!-- // FOOTER END -->
+
+
+
+
+	<!-- js plugin -->
+	<script src="/assets/js/jquery.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/jquery.stellar.min.js"></script>
+	<script src="/assets/js/text-rotate.js"></script>
+	<script src="/assets/js/numscroller.js"></script>
+	<script src="/assets/js/jquery.appear.js"></script>
+	<script src="/assets/js/progress-bar.min.js"></script>
+	<script src="/assets/js/jquery.mixitup.js"></script>
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/js/magnific-popup-options.js"></script>
+	<script src="/assets/js/jquery.flexslider-min.js"></script>
+	<script src="/assets/js/aos.js"></script>
+	<script src="/assets/js/app.js"></script>
+
+	<!-- main js -->
+	<script src="/assets/js/main.js"></script>
+</body>
+
+</html>

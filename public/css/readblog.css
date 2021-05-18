@@ -24,7 +24,6 @@ pre {
 }
 
 .read-me-blog-container { 
-    padding-top: 15vh;
     max-width: 600px;
 }
 
@@ -63,9 +62,6 @@ pre {
 }
 
 @media screen and (max-width:768px) {
-    .read-me-blog-container { 
-        padding-top: 12vh;
-    }
     .date-tag-container span {
         font-size: 90%;
     }

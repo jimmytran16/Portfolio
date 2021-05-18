@@ -35,7 +35,7 @@ router.get('/readmore/:id', (req, res) => {
             res.sendStatus(401);
             res.end();
         }else {
-            res.render('blog/readblog.ejs', {
+            res.render('entry/readblog.ejs', {
                 posts: data
             })
         }
