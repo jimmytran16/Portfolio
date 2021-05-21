@@ -16,14 +16,14 @@ module.exports = function sendMessageController(name, email, message, callback) 
    var mailingOptions = {
       from: process.env.EMAIL_SENDER,
       to: process.env.EMAIL_RECIEVER,
-      subject: 'Portfolio CONTACT',
+      subject: 'Portfolio - Contact',
       text: 'name: ' + name + '\nemail: ' + email + '\nmessage: ' + message
    };
 
    transporterInstance.sendMail(mailingOptions, function (err, info) {
       if (err) {
          console.log(err)
-         return callback(null, 'Failed to send');
+         return callback(null, 'Service currently not available!');
       } else {
          console.log('Email sent: ' + info.response);
          return callback(null, 'Sucessfully Sent!')

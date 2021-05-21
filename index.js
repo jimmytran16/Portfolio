@@ -52,18 +52,15 @@ app.use(session({
 }));
 
 // connect to mongoose
-mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true }, (err) => {
-        if (err) { console.log(err); }
-        else { console.log('successfully connected!'); }
-        
-        // routers
-        app.use('/', indexRouter); 
-        app.use('/blog', blogRouter);
-        app.use('/project',projectRouter);
-        app.use('/contact',contactRouter);
-        app.use(`/${process.env.BASE_ROUTER_ADMIN}`,adminRouter);
-        app.use('*', error404Router);
-})
+mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true }, (err) => { (err) ? console.log(err) : console.log('successfully connected to DB!') })
+
+// routers
+app.use('/', indexRouter); 
+app.use('/blog', blogRouter);
+app.use('/project',projectRouter);
+app.use('/contact',contactRouter);
+app.use(`/${process.env.BASE_ROUTER_ADMIN}`,adminRouter);
+app.use('*', error404Router);
 
 
 // export the app

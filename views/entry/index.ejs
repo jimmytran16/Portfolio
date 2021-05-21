@@ -30,7 +30,31 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+<style>
+	.blog-info-container {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
 
+	.blog-item .blog-desc p {
+		word-break: break-word;
+	}
+
+	.blog-item .blog-img img {
+		width: 100%;
+	}
+
+	.blog-desc .blog-desc-inner {
+		padding: 8px;
+	}
+
+	@media screen and (max-width:768px) {
+		.blog-info-container {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+</style>
 </head>
 
 <body>
@@ -182,7 +206,7 @@
 									<img src="<%=blogs[i]['img_path']%>">
 								</a>
 								<div class="blog-desc">
-									<div>
+									<div class="blog-desc-inner">
 										<h4>
 											<a href="/blog/readmore/<%=blogs[i]['_id']%>"><%=blogs[i]['title']%></a>
 										</h4>

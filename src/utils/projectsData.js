@@ -76,7 +76,7 @@ module.exports = {
             repo: 'https://github.com/jimmytran16/Programming-Survey'
         },
         '5': {
-            description: "A RESTful API used to automate appointment confirmations",
+            description: "A RESTful API that is used for automating the appointment confirmation process for a nail salon. This server takes a request from the nail salon web app <a href='https://www.designernailsalon.com/bookings' target='blank'>website</a> and interacts with Twilio to send out appointment confirmations to customers",
             name: "Designer's Confirmation API",
             sub_headline: 'RESTful API for appointment confirmations',
             image_path: '/images/confirmapidesign.png',
