@@ -40,7 +40,7 @@ module.exports = {
             repo: 'https://github.com/jimmytran16/designer-nail-salon'
         },
         '3': {
-            description: "A social media full stack application which includes features such as register/login, posting tweets, and interacting with user’s tweets. Implemented a RESTful API using Express as a backend framework, and using JWT (Json Web Tokens) for stateless authentication. Technologies: React.js, Node.js/Express, MongoDB, Firebase Cloud Storage, Netlify (to host client), Heroku (to host server).",
+            description: "A social media full stack application which includes features such as register/login, posting tweets, and interacting with user’s tweets. Implemented a RESTful API using Express as a backend framework, and using JWT (Json Web Tokens) for stateless authentication.",
             name: "Tweetir",
             sub_headline: 'A twitter clone',
             image_path: '/images/twitterclone.png',
