@@ -1,17 +1,20 @@
 'use strict'
 
 const Post = require('../model/posts')
+const projectData = require('../utils/projectsData')
 
 // function to get the posts from the database
-module.exports = function getAllBlogsController(callback) {
-    Post.find({}, (err, posts) => {
-        // console.log('from blog controller', posts)
-        console.log(posts.length)
-        if (err) {
-            callback(err,null)
-        } else {
-            var orderedPosts = posts.reverse()
-            callback(null,orderedPosts)
-        }
-    })
+module.exports = async function getAllBlogsController(req,res,next) {
+
+    let data = projectData.indexPage
+    let blogs = []
+    let message = req.query.message
+    let success = message === 'Sucessfully Sent!'
+    
+    try {
+        var posts = await Post.find({})
+        res.render('entry/index' , { data: data, blogs: posts, message: message, success: success })
+    }catch(err) {
+        res.send(err)
+    }
 }

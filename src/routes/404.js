@@ -2,10 +2,9 @@
 
 const express = require('express')
 const router = express.Router()
+const controllers = require('../controllers/index')
 
-// router to handle 404 status codes
-router.get('/' , (req,res) => {
-    res.status(404).render('error/404.ejs')
-})
+// route to handle page not found
+router.get('/', controllers.notFoundController)
 
 module.exports = router;

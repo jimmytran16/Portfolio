@@ -4,7 +4,12 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 var nodemailer = require('nodemailer');
 
 // function to send out the message that was submitted on the contact form
-module.exports = function sendMessageController(name, email, message, callback) {
+module.exports = function sendMessageController(req,res,next) {
+   
+   const name = req.body.name;
+   const email = req.body.email;
+   const message = req.body.message;
+
    var transporterInstance = nodemailer.createTransport({
       service: process.env.SERVICE,
       auth: {
@@ -22,11 +27,9 @@ module.exports = function sendMessageController(name, email, message, callback) 
 
    transporterInstance.sendMail(mailingOptions, function (err, info) {
       if (err) {
-         console.log(err)
-         return callback(null, 'Service currently not available!');
+         return res.redirect('/?message=' + 'Service currently not available!' + '#location-container')
       } else {
-         console.log('Email sent: ' + info.response);
-         return callback(null, 'Sucessfully Sent!')
+         return res.redirect('/?message=' + 'Sucessfully Sent!' + '#location-container')
       }
    });
 }
