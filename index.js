@@ -1,12 +1,12 @@
 'use strict'
 
 const express = require('express')
-const indexRouter = require('./src/routes/home')
+const indexRouter = require('./src/routes/main/home')
 const adminRouter = require('./src/routes/admin/admin')
-const blogRouter = require('./src/routes/blog');
-const projectRouter = require('./src/routes/projects')
-const contactRouter = require('./src/routes/contact')
-const error404Router = require('./src/routes/404')
+const blogRouter = require('./src/routes/main/blog');
+const projectRouter = require('./src/routes/main/projects')
+const contactRouter = require('./src/routes/main/contact')
+const error404Router = require('./src/routes/main/404')
 const path = require('path');
 const mongoose = require('mongoose');
 const morgan = require('morgan')
@@ -52,7 +52,7 @@ app.use(session({
 }));
 
 // connect to mongoose
-mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true }, (err) => { (err) ? console.log(err) : console.log('successfully connected to DB!') })
+mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true }, (err) => console.log( (err) ? err : 'successfully connected to DB!' ) )
 
 // routers
 app.use('/', indexRouter); 

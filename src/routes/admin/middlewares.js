@@ -3,8 +3,8 @@
 // imports
 // use .env file during development
 if (process.env.NODE_ENV != 'production') require('dotenv').config();
-const configs = require('./configs')
-// Load dependencies for s3
+
+const configs = require('../../config/config')
 const aws = require('aws-sdk');
 const multer = require('multer');
 const multerS3 = require('multer-s3');
@@ -23,19 +23,13 @@ const s3 = new aws.S3({
 
 // admin middle ware functions
 
-
-// middleware function for uploading the images to the s3 bucket
-const upload = multer({
-    storage: multerS3({
-        s3: s3,
-        bucket: process.env.BUCKET_NAME,
-        acl: 'public-read',
-        contentType: multerS3.AUTO_CONTENT_TYPE,
-        key: function (request, file, cb) {
-            cb(null, Date.now().toString() + '-' + file.originalname);
-        }
-    })
-})
+// Initiating a memory storage engine to store files as Buffer objects
+const uploader = multer({
+    storage: multer.memoryStorage(),
+    limits: {
+        fileSize: 5 * 1024 * 1024, // limiting files size to 5 MB
+    },
+});
 
 // authentication middleware
 const authenticateLoggedinUser = function (req, res, next) {
@@ -61,5 +55,5 @@ const checkIfUserisLoggedIn = function (req, res, next ) {
 module.exports = {
     checkIfUserisLoggedIn:checkIfUserisLoggedIn,
     authenticateLoggedinUser:authenticateLoggedinUser,
-    upload:upload
+    uploader:uploader
 }
