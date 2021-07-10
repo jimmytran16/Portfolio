@@ -1,4 +1,4 @@
-const configs = require('../config/config')
+const configs = require('../config/admin.config')
 
 module.exports = function adminLogoutController(req , res, next) {
     req.session.destroy();

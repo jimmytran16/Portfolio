@@ -3,7 +3,7 @@
 // use .env file during development
 if (process.env.NODE_ENV != 'production') require('dotenv').config();
 
-const configs = require('../config/config')
+const configs = require('../config/admin.config')
 
 // function to validate the admin and log them in
 module.exports = function adminLoginController(req, res, next) {
@@ -19,7 +19,7 @@ module.exports = function adminLoginController(req, res, next) {
     const password = req.body.password;
 
     // if username and password is correct
-    if (username == process.env.ADMIN_USER && password == process.env.ADMIN_PASSW) {
+    if (username == configs.ADMIN_USER && password == configs.ADMIN_PASSW) {
         req.session.user = req.body.username;
         req.session.admin = true;
         res.redirect(configs.DASHBOARD_URL);

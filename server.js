@@ -1,7 +1,8 @@
 'use strict'
 
 const app = require('./index');
-const PORT = process.env.PORT || 3000;
+const configs = require('./src/config/main.config')
+const PORT = configs.PORT || 3000;
 
 // Listen to the port
 app.listen(PORT, () => {

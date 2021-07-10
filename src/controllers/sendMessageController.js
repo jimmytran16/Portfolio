@@ -1,7 +1,9 @@
 'use strict'
-if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 var nodemailer = require('nodemailer');
+const configs = require('../config/main.config')
+
+if (configs.NODE_ENV !== 'production') require('dotenv').config();
 
 // function to send out the message that was submitted on the contact form
 module.exports = function sendMessageController(req,res,next) {
@@ -11,16 +13,16 @@ module.exports = function sendMessageController(req,res,next) {
    const message = req.body.message;
 
    var transporterInstance = nodemailer.createTransport({
-      service: process.env.SERVICE,
+      service: configs.SERVICE,
       auth: {
-         user: process.env.EMAIL_SENDER,
-         pass: process.env.EMAIL_SENDER_PASSW
+         user: configs.EMAIL_SENDER,
+         pass: configs.EMAIL_SENDER_PASSW
       }
    });
 
    var mailingOptions = {
-      from: process.env.EMAIL_SENDER,
-      to: process.env.EMAIL_RECIEVER,
+      from: configs.EMAIL_SENDER,
+      to: configs.EMAIL_RECIEVER,
       subject: 'Portfolio - Contact',
       text: 'name: ' + name + '\nemail: ' + email + '\nmessage: ' + message
    };

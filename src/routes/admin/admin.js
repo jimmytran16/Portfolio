@@ -6,7 +6,7 @@ if (process.env.NODE_ENV != 'production') require('dotenv').config();
 // Load depencendies used for app
 const express = require('express');
 const router = express.Router();
-const configs = require('../../config/config')
+const configs = require('../../config/admin.config')
 const submitPostController = require('../../controllers/submitPostController')
 const controllers = require('../../controllers/index')
 const { authenticateLoggedinUser, checkIfUserisLoggedIn, uploader } = require('./middlewares')

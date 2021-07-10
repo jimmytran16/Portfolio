@@ -1,4 +1,4 @@
-const configs = require('../config/config')
+const configs = require('../config/admin.config')
 
 module.exports = function adminDashboardController(req, res, next) {
     let code_sample = configs.CODE_SAMPLE;

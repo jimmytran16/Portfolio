@@ -3,7 +3,7 @@
 const BlogUtil = require('../utils/blogUtils')
 const Post = require('../model/posts')
 const { Storage } = require('@google-cloud/storage');
-const configs = require('../config/config')
+const configs = require('../config/admin.config')
 
 // function for the admin to submit a post
 // will send the blog image to firebase
@@ -18,12 +18,12 @@ module.exports = function submitPostController(req, res, next) {
 
     // Create new storage instance with Firebase project credentials
     const storage = new Storage({
-        projectId: process.env.GCLOUD_PROJECT_ID,
-        keyFilename: process.env.GCLOUD_APPLICATION_CREDENTIALS,
+        projectId: configs.GCLOUD_PROJECT_ID,
+        keyFilename: configs.GCLOUD_APPLICATION_CREDENTIALS,
     });
 
     // Create a bucket associated to Firebase storage bucket
-    const bucket = storage.bucket(process.env.GCLOUD_STORAGE_BUCKET_URL);
+    const bucket = storage.bucket(configs.GCLOUD_STORAGE_BUCKET_URL);
 
     let title = req.body.title;
     let description = req.body.description;
