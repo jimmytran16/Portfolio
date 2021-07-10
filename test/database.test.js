@@ -1,15 +1,17 @@
+'use strict'
+
 require('dotenv').config();
 const app = require('../index');
 const supertest = require('supertest');
-'use strict'
 
 const request = supertest(app);
 const Post = require('../model/posts');
 const mongoose = require('mongoose');
+const configs = require('../src/config/main.config')
 
 // execution before the test suites
 beforeAll(async () => {
-    const url = `${process.env.DB_URL}`;
+    const url = `${configs.DB_URL}`;
     await mongoose.connect(url, { useNewUrlParser: true });
 });
 

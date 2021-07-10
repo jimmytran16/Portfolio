@@ -46,10 +46,8 @@
 		}
 
 		p {
-			font-size: 14px!important;
+			font-size: 14px !important;
 		}
-
-
 	</style>
 </head>
 
@@ -112,7 +110,8 @@
 								<%= posts.date.split(',')[0] %>
 							</span>
 							<div style="display: block;">
-								<a class="smoth-scroll" href="#read-me-blog-container"><i class="fa fa-angle-down arrow"></i></a>
+								<a class="smoth-scroll" href="#read-me-blog-container"><i
+										class="fa fa-angle-down arrow"></i></a>
 							</div>
 						</div>
 					</div>
@@ -125,29 +124,35 @@
 
 	<div class="container read-me-blog-container" id="read-me-blog-container">
 		<div class="profile-section">
-		  <a href="/#about"><img class="blog-profile-pic" src="/images/propic.jpg" /></a>
-		  <p>Jimmy Tran</p>
+			<a href="/#about"><img class="blog-profile-pic" src="/images/propic.jpg" /></a>
+			<p>Jimmy Tran</p>
 		</div>
 		<!-- <h1><%= posts.title %></h1> -->
 		<div class="date-tag-container">
-		  <% for (var x = 0; x < posts.tags.length; x++) { %>
-		  <span class="badge badge-pill <%=posts.tags[x][1]%>"> <%= posts.tags[x][0] %> </span>
-		  <% } %>
-		  <!-- <p><%= posts.date.split(',')[0] %></p> -->
+			<% for (var x=0; x < posts.tags.length; x++) { %>
+				<span class="badge badge-pill <%=posts.tags[x][1]%>">
+					<%= posts.tags[x][0] %>
+				</span>
+				<% } %>
+					<!-- <p><%= posts.date.split(',')[0] %></p> -->
 		</div>
 		<div class="blog-img-container">
-		  <img src="<%=posts.img_path%>" alt="blog-picture">
+			<img src="<%=posts.img_path%>" alt="blog-picture">
 		</div>
-		<p class="read-post-description"><%- posts.description %></p>
-	  </div>
+		<p class="read-post-description">
+			<%- posts.description %>
+		</p>
+	</div>
 
 	<!-- // FOOTER BEGIN -->
 	<footer id="footer-post">
 		<div class="container">
 			<div class="col-md-8 col-md-offset-2 text-center">
 				<ul class="social-icons-footer">
-					<li><a href="https://www.github.com/jimmytran16" target="_blank"><i class="fa fa-github fa-lg"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/jimmyviettran" target="_blank"><i class="fa fa-linkedin fa-lg"></i></a></li>
+					<li><a href="https://www.github.com/jimmytran16" target="_blank"><i
+								class="fa fa-github fa-lg"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/jimmyviettran" target="_blank"><i
+								class="fa fa-linkedin fa-lg"></i></a></li>
 				</ul>
 
 				<p>© 2021 Jimmy Tran</p>
