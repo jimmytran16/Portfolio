@@ -1,7 +1,5 @@
 'use strict'
 
-const { proccessTags } = require('../utils/blogUtils');
-
 if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 // export environment variables 

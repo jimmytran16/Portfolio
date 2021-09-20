@@ -91,7 +91,7 @@ module.exports = {
             repo:'https://github.com/jimmytran16/DNSConfirmationAPI'
         },
         '6': {
-            description: "Created a web scraper using Python and BeautifulSoup to extract COVID-19 data of all 50 states. I then decided to integrate that into a web application. This tool will send you real-time data on all 50 states in the United States in table format. Data includes total cases, new cases, total deaths, and new deaths.",
+            description: "Created a web scraper using Python and BeautifulSoup to extract COVID-19 data of all 50 states. I then decided to integrate that into a web application. This website will accept an email input from a user, and then after submitting, will send out real-time data on all 50 states in the United States in table format to the recipient. Data includes total cases, new cases, total deaths, and new deaths.",
             name: "COVID-19 Tracker",
             sub_headline: 'A COVID-19 tracking tool',
             image_path: '/images/covid.png',
@@ -106,6 +106,26 @@ module.exports = {
             ],
             website:'https://send-covid-data.herokuapp.com/',
             repo:'https://github.com/jimmytran16/send-covid-data-website'
+        },
+        '7': {
+            description: "Created a personal financial application that would keep track of all of your open accounts. Users are able to register for an account and start tracking their finances. This application will demonstrate chart visualizations analysis of all of your accounts and payments made. Includes a feature that enables you to choose if you want to get a reminder text sent to you of a particular account on the day that it is due. Implemented a Reminder API (<a href='https://www.github.com/jimmytran16/tracker-reminder-api' target='blank'>link</a>) that runs a cron job on a daily basis to send out payment reminders to users based on the account's due date.",
+            name: "Trkr",
+            sub_headline: 'A personal finance application',
+            image_path: '/images/covid.png',
+            design_path: '/images/trkr_design.png',
+            giphy_path:'/images/trkr1.png',
+            tech: [
+                'React.js',
+                'Chart.js',
+                'Express.js',
+                'Twilio',
+                'JWT authentication',
+                'Node-Cron',
+                'Netlify',
+                'Heroku',
+            ],
+            website:'https://trkrapp.netlify.app/',
+            repo:'https://github.com/jimmytran16/tracker'
         }
     },
     indexPage: [
@@ -120,6 +140,12 @@ module.exports = {
             image_path: '/images/confirmapidesign.png',
             description: 'RESTful API for appointment confirmations',
             endpoint: '/project/5'
+        },
+        {
+            name: "Trkr",
+            image_path: '/images/trkr.png',
+            description: 'A personal finance application',
+            endpoint: '/project/7'
         },
         {
             name: "COVID-19 Tracker",
@@ -139,11 +165,12 @@ module.exports = {
             description: 'A twitter clone',
             endpoint: '/project/3'
         },
-        {
-            name: "Best Programming Language",
-            image_path: '/images/bestprojlang.png',
-            description: 'Survey for most popular programming lanuage',
-            endpoint: '/project/4'
-        },
+        // {
+        //     name: "Best Programming Language",
+        //     image_path: '/images/bestprojlang.png',
+        //     description: 'Survey for most popular programming lanuage',
+        //     endpoint: '/project/4'
+        // },
+
     ]
 }
