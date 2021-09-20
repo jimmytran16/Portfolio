@@ -25,7 +25,7 @@ module.exports = {
             name: "Designer Nail Salon",
             sub_headline: 'A local nail salon web application',
             image_path: '/images/dns1.JPG',
-            design_path: '',
+            design_path: '/images/dns_design.png',
             giphy_path:'/images/designergif.gif',
             tech: [
                 'HTML5,CSS3',
@@ -50,6 +50,7 @@ module.exports = {
                 'React.js',
                 'Node/Express.js',
                 'Firebase Cloud Storage',
+                'JWT Authentication',
                 'MongoDB',
                 'Heroku',               
                 'Netlify',               
@@ -108,8 +109,8 @@ module.exports = {
             repo:'https://github.com/jimmytran16/send-covid-data-website'
         },
         '7': {
-            description: "Created a personal financial application that would keep track of all of your open accounts. Users are able to register for an account and start tracking their finances. This application will demonstrate chart visualizations analysis of all of your accounts and payments made. Includes a feature that enables you to choose if you want to get a reminder text sent to you of a particular account on the day that it is due. Implemented a Reminder API (<a href='https://www.github.com/jimmytran16/tracker-reminder-api' target='blank'>link</a>) that runs a cron job on a daily basis to send out payment reminders to users based on the account's due date.",
-            name: "Trkr",
+            description: "Created a personal financial application that would keep track of all of your open accounts. Users are able to register for an account and start tracking their finances. This application will demonstrate chart visualizations analysis of all of your accounts and payments made. Includes a feature that enables you to choose if you want to get a reminder text sent to you of a particular account on the day that it is due. Implemented a Reminder API (<a href='https://www.github.com/jimmytran16/FinNetic-reminder-api' target='blank'>link</a>) that runs a cron job on a daily basis to send out payment reminders to users based on the account's due date.",
+            name: "FinNetic",
             sub_headline: 'A personal finance application',
             image_path: '/images/covid.png',
             design_path: '/images/trkr_design.png',
@@ -117,14 +118,15 @@ module.exports = {
             tech: [
                 'React.js',
                 'Chart.js',
-                'Express.js',
+                'Node/Express.js',
                 'Twilio',
                 'JWT authentication',
                 'Node-Cron',
+                'MongoDB',
                 'Netlify',
                 'Heroku',
             ],
-            website:'https://trkrapp.netlify.app/',
+            website:'https://finnetic.netlify.app/',
             repo:'https://github.com/jimmytran16/tracker'
         }
     },
@@ -142,7 +144,7 @@ module.exports = {
             endpoint: '/project/5'
         },
         {
-            name: "Trkr",
+            name: "FinNetic",
             image_path: '/images/trkr.png',
             description: 'A personal finance application',
             endpoint: '/project/7'
