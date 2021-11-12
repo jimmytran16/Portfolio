@@ -17,7 +17,7 @@ module.exports = {
                 'Heroku',
                 'Digital Ocean'
             ],
-            website: 'https://www.greenvoterguidema.com',
+            website: 'https://greenvoterguidema.herokuapp.com',
             repo: ''
         },
         '2': {
