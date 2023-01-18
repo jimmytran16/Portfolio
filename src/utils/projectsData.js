@@ -105,7 +105,7 @@ module.exports = {
                 'BeautifulSoup',
                 'AWS Elastic Beanstalk',                             
             ],
-            website:'https://send-covid-data.herokuapp.com/',
+            website:'https://send-covid-data.glitch.me/',
             repo:'https://github.com/jimmytran16/send-covid-data-website'
         },
         '7': {
